@@ -20,13 +20,13 @@ const Navigation: React.FC = () => {
   })
   return (
     <div className="flex items-center fixed z-50 w-full bg-transparent py-5 pl-20 pr-10 justify-between">
-      <Link to="/" className={`${mode && "text-white"} ${transition} text-lg font-semibold`}>
+      <Link to="/" className={`${mode && "text-white"} ${transition} text-xl font-bold`}>
         Personal
       </Link>
       <div className="flex items-center gap-20">
         <div>
           {buttons.map((button, index) => (
-            <Button style={{textTransform: "capitalize", color: "black"}} key={index}>{button}</Button>
+            <Button style={{textTransform: "capitalize", color: !mode ? "black": "white"}} className={transition} key={index}>{button}</Button>
           ))}
         </div>
         <div className="flex items-center gap-5">
