@@ -3,6 +3,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import Profile from "../images/me.png";
 import { State } from "../store";
+import Google from "./Google";
 const Home: React.FC = () => {
   const mode = useSelector<State>((state) => state.mode);
   const allcircle : string = "w-[27rem] h-[27rem] relative rounded-full"
@@ -29,11 +30,11 @@ const Home: React.FC = () => {
       <div className="relative">
         <div className="absolute items-end top-4 left-32 flex z-0">
           <div className={`${allcircle} bg-[#d2f7ff]`}>
-            <div className="absolute"></div>
+             <div className="absolute top-10 left-10"> <Google/></div>
           </div>
           <div className={`${allcircle} bg-[#fae1b1] relative right-24 top-[12rem]`}></div>
         </div>
-        <img src={Profile} className="min-w-[60rem] z-10 relative" alt="me" />
+        <img src={Profile} className="min-w-[50rem] z-10 relative" alt="me" />
       </div>
     </div>
   );
