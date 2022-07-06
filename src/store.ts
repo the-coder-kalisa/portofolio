@@ -14,9 +14,7 @@ const mode = createSlice<boolean, SliceCaseReducers<boolean>>({
   },
 });
 const store = configureStore({
-  reducer: {
-    mode: mode.reducer,
-  },
+  reducer: mode.reducer
 });
 export const actions : CaseReducerActions<SliceCaseReducers<boolean>> = mode.actions
 export default store;
