@@ -1,9 +1,13 @@
+import { Provider } from "react-redux";
 import Navigation from "./components/Navigation";
+import store from "./store";
 function App() {
   return (
-    <div>
-      <Navigation />
-    </div>
+    <Provider store={store}>
+      <div>
+        <Navigation />
+      </div>
+    </Provider>
   );
 }
 
