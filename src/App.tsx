@@ -7,7 +7,7 @@ function App() {
   const mode = useSelector<State>(state => state.mode);
   return (
 
-      <div className={`${mode && "bg-black"}`}>
+      <div className={`${mode && "bg-black"} h-[50000px]`}>
         <Navigation />
       </div>
   );

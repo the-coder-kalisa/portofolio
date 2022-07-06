@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Button, IconButton } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
@@ -12,32 +12,40 @@ const Navigation: React.FC = () => {
   const changeMode = () => {
     dispatch(actions.changeMode(!mode));
   };
+  useEffect(()=>{
+    
+  },[])
+  window.addEventListener('scroll', () =>{
+    dispatch(actions.changeHeight(scrollY));
+  })
   return (
-    <div className="flex items-center py-3 px-4 justify-between">
-      <Link to="/" className={`${mode && "text-white"}`}>
+    <div className="flex items-center fixed w-full bg-transparent py-5 pl-20 pr-10 justify-between">
+      <Link to="/" className={`${mode && "text-white"} text-lg font-semibold`}>
         Personal
       </Link>
-      <div className="flex items-center gap-14">
-        <div className="flex items-center gap-5">
-          {buttons.map((but, index) => (
-            <Button key={index}>{but}</Button>
+      <div className="flex items-center gap-20">
+        <div>
+          {buttons.map((button, index) => (
+            <Button style={{textTransform: "capitalize"}} key={index}>{button}</Button>
           ))}
         </div>
-        <Button
-          style={{
-            backgroundColor: "#fb992d",
-            color: "white",
-            borderRadius: "9999px",
-            padding: "7px 20px",
-            textTransform: "capitalize",
-          }}
-          className="drop-shadow-lg"
-        >
-          Contact Us
-        </Button>
-        <IconButton onClick={changeMode}>
-          {mode ? <LightMode style={{ color: "white" }} /> : <DarkMode />}
-        </IconButton>
+        <div className="flex items-center gap-5">
+          <Button
+            style={{
+              backgroundColor: "#fb992d",
+              color: "white",
+              borderRadius: "9999px",
+              padding: "7px 20px",
+              textTransform: "capitalize",
+            }}
+            className="drop-shadow-lg"
+          >
+            Contact Us
+          </Button>
+          <IconButton onClick={changeMode}>
+            {mode ? <LightMode style={{color: "white"}}/> : <DarkMode />}
+          </IconButton>
+        </div>
       </div>
     </div>
   );
