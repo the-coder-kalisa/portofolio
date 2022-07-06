@@ -1,13 +1,15 @@
-import { Provider } from "react-redux";
+
 import Navigation from "./components/Navigation";
-import store from "./store";
+import { useSelector } from "react-redux";
+import { State } from "./store";
+
 function App() {
+  const mode = useSelector<State>(state => state.mode);
   return (
-    <Provider store={store}>
-      <div>
+
+      <div className={`${mode && "bg-black"}`}>
         <Navigation />
       </div>
-    </Provider>
   );
 }
 

@@ -8,10 +8,10 @@ export interface State {
 }
 const mode = createSlice<State, SliceCaseReducers<State>>({
   name: "mode",
-  initialState: { mode: true },
+  initialState: { mode: false },
   reducers: {
     changeMode(state, action) {
-      state.mode = action.payload;
+      state.mode = action.payload
     },
   },
 });
