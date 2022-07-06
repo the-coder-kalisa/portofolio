@@ -6,6 +6,7 @@ import { State, transition } from "../store";
 import Facebook from "./Facebook";
 import Google from "./Google";
 import Twitter from "./Twitter";
+import gif from "../images/gif.png"
 const Home: React.FC = () => {
   const mode = useSelector<State>((state) => state.mode);
   const allcircle: string = "w-[22rem] h-[22rem] relative rounded-full";
@@ -30,6 +31,7 @@ const Home: React.FC = () => {
         </Button>
       </div>
       <div className="relative">
+      <img src={gif} alt="gif" className="absolute top-0 -left-[12rem]"/>
         <div className="absolute items-end top-8 flex z-0">
           <div className={`${allcircle} bg-[#d2f7ff]`}>
             <div className="absolute cursor-pointer bg-white rounded-full p-5 drop-shadow-xl top-[5rem]">

@@ -8,7 +8,7 @@ import { DarkMode, LightMode } from "@mui/icons-material";
 const Navigation: React.FC = () => {
   const dispatch = useDispatch();
   const mode = useSelector<State>((state) => state.mode);
-  const buttons: string[] = ["Home", "About Us", "Services"];
+  const buttons: string[] = ["Home", "Services", "About Us"];
   const changeMode = () => {
     dispatch(actions.changeMode(!mode));
   };
