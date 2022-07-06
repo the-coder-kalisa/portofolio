@@ -22,5 +22,6 @@ const sitedata = createSlice<State, SliceCaseReducers<State>>({
 const store = configureStore({
   reducer: sitedata.reducer,
 });
+export const transition = "transition-all duration-1000"
 export const actions = sitedata.actions;
 export default store;

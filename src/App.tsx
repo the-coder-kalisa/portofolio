@@ -1,14 +1,13 @@
-
-import Navigation from "./components/Navigation";
 import { useSelector } from "react-redux";
-import { State } from "./store";
-
+import { State, transition } from "./store";
+import {Home, Navigation} from "./components"
 function App() {
   const mode = useSelector<State>(state => state.mode);
   return (
 
-      <div className={`${mode && "bg-black"} h-[50000px]`}>
+      <div className={`${mode && "bg-black"} ${transition} h-[5000px]`}>
         <Navigation />
+        <Home />
       </div>
   );
 }

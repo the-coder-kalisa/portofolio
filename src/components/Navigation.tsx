@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Button, IconButton } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
-import { actions, State } from "../store";
+import { actions, State, transition } from "../store";
 import { DarkMode, LightMode } from "@mui/icons-material";
 
 const Navigation: React.FC = () => {
@@ -20,13 +20,13 @@ const Navigation: React.FC = () => {
   })
   return (
     <div className="flex items-center fixed w-full bg-transparent py-5 pl-20 pr-10 justify-between">
-      <Link to="/" className={`${mode && "text-white"} text-lg font-semibold`}>
+      <Link to="/" className={`${mode && "text-white"} ${transition} text-lg font-semibold`}>
         Personal
       </Link>
       <div className="flex items-center gap-20">
         <div>
           {buttons.map((button, index) => (
-            <Button style={{textTransform: "capitalize"}} key={index}>{button}</Button>
+            <Button style={{textTransform: "capitalize", color: "black"}} key={index}>{button}</Button>
           ))}
         </div>
         <div className="flex items-center gap-5">
