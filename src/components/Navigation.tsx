@@ -9,7 +9,7 @@ const Navigation: React.FC = () => {
       <Link to="/">Personal</Link>
       <div className="flex items-center gap-5">
         {buttons.map((but, index)=>(
-          <Button>{but}</Button>
+          <Button key={index}>{but}</Button>
         ))}
       </div>
     </div>
