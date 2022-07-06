@@ -6,7 +6,7 @@ import { State } from "../store";
 import Google from "./Google";
 const Home: React.FC = () => {
   const mode = useSelector<State>((state) => state.mode);
-  const allcircle : string = "w-[27rem] h-[27rem] relative rounded-full"
+  const allcircle: string = "w-[22rem] h-[22rem] relative rounded-full";
   return (
     <div className="pt-[5rem] px-[5rem] items-center flex gap-3">
       <div className="flex flex-col gap-5">
@@ -28,13 +28,18 @@ const Home: React.FC = () => {
         </Button>
       </div>
       <div className="relative">
-        <div className="absolute items-end top-4 left-32 flex z-0">
+        <div className="absolute items-end top-4 left-[13rem] flex z-0">
           <div className={`${allcircle} bg-[#d2f7ff]`}>
-             <div className="absolute top-10 left-10"> <Google/></div>
+            <div className="absolute cursor-pointer bg-white rounded-full p-5 drop-shadow-xl top-[5rem]">
+              <Google />
+            </div>
           </div>
-          <div className={`${allcircle} bg-[#fae1b1] relative right-24 top-[12rem]`}></div>
+          <div
+            className={`${allcircle} bg-[#fae1b1] relative right-24 top-[12rem]`}
+          ></div>
+          
         </div>
-        <img src={Profile} className="min-w-[50rem] z-10 relative" alt="me" />
+        <img src={Profile} className="min-w-[60rem] z-10 relative" alt="me" />
       </div>
     </div>
   );
