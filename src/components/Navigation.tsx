@@ -31,6 +31,7 @@ const Navigation: React.FC = () => {
         </div>
         <div className="flex items-center gap-5">
           <Button
+          variant="contained"
             style={{
               backgroundColor: "#fb992d",
               color: "white",
