@@ -5,12 +5,15 @@ import { Button } from "@mui/material";
 const Navigation: React.FC = () => {
   const buttons: string[] = ["Home", "About Us", "Services"];
   return (
-    <div className="flex items-center justify-between px-20">
+    <div className="flex items-center py-3 justify-between px-20">
       <Link to="/">Personal</Link>
-      <div className="flex items-center gap-5">
-        {buttons.map((but, index)=>(
-          <Button key={index}>{but}</Button>
-        ))}
+      <div className="flex items-center gap-14">
+        <div className="flex items-center gap-5">
+          {buttons.map((but, index) => (
+            <Button key={index}>{but}</Button>
+          ))}
+        </div>
+      <Button style={{backgroundColor: "#fb992d", color: "white"}}>Contact Us</Button>
       </div>
     </div>
   );
