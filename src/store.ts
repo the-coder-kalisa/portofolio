@@ -1,20 +1,22 @@
 import {
-    CaseReducerActions,
   configureStore,
   createSlice,
   SliceCaseReducers,
 } from "@reduxjs/toolkit";
-const mode = createSlice<boolean, SliceCaseReducers<boolean>>({
+export interface State {
+  mode: boolean;
+}
+const mode = createSlice<State, SliceCaseReducers<State>>({
   name: "mode",
-  initialState: false,
+  initialState: { mode: true },
   reducers: {
-    changeMode(state) {
-      state = !state;
+    changeMode(state, action) {
+      state.mode = action.payload;
     },
   },
 });
 const store = configureStore({
-  reducer: mode.reducer
+  reducer: mode.reducer,
 });
-export const actions : CaseReducerActions<SliceCaseReducers<boolean>> = mode.actions
+export const actions = mode.actions;
 export default store;

@@ -2,14 +2,18 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Button, IconButton } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
-import { actions } from "../store";
+import { actions, State } from "../store";
+import { DarkMode, LightMode } from "@mui/icons-material";
 
 const Navigation: React.FC = () => {
   const dispatch = useDispatch();
-  const mode = useSelector<unknown>(state => state);
+  const mode = useSelector<State>(state => state.mode);
   const buttons: string[] = ["Home", "About Us", "Services"];
+  const changeMode = () => {
+    dispatch(actions.changeMode(!mode))
+  }
   return (
-    <div className="flex relative items-center py-3 justify-between px-20">
+    <div className="">
       <Link to="/">Personal</Link>
       <div className="flex items-center gap-14">
         <div className="flex items-center gap-5">
@@ -21,7 +25,9 @@ const Navigation: React.FC = () => {
           Contact Us
         </Button>
       </div>
-      <IconButton className="absolute"></IconButton>
+      <IconButton className="absolute" onClick={changeMode}>
+        {mode ? <LightMode /> : <DarkMode />}
+      </IconButton>
     </div>
   );
 };
