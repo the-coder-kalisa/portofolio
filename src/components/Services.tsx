@@ -50,7 +50,7 @@ const Services: React.FC = () => {
             <KeyboardArrowUp />
           </IconButton>
         }
-        <div className="max-h-[30rem] max-w-[35rem] rounded-xl bg-[#e7f7fb] p-3 flex flex-col gap-5 overflow-scroll">
+        <div className={`max-h-[30rem] max-w-[35rem] rounded-xl ${mode ? "bg-[#19305c]" : "bg-[#e7f7fb] "} ${transition} p-3 flex flex-col gap-5 overflow-scroll`}>
           <div ref={tops}></div>
           {knowledge.map(({ type, categorie, desc, image }, index) => (
             <div
@@ -61,7 +61,7 @@ const Services: React.FC = () => {
               key={index}
             >
               <div
-                className={`flex items-center p-5 rounded-xl bg-white gap-5 cursor-pointer`}
+                className={`flex items-center p-5 rounded-xl ${mode ? "bg-[#091b2c]" : "bg-white"} ${transition} gap-5 cursor-pointer`}
               >
                 <div className="max-w-[10rem] max-h-[20rem]">
                   <img
@@ -95,7 +95,7 @@ const Services: React.FC = () => {
       </div>
       <div className="max-w-[40rem]">
         <div className="text-7xl font-bold">
-          <div className="text-[#061d48]">My awesome</div>
+          <div className={`${mode ? "text-[white]" : "text-[#19305c]"} ${transition}`} >My awesome</div>
           <div className="text-[#e9843f]">services</div>
         </div>
         <div className="flex flex-col gap-3">
