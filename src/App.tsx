@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 import { State, transition } from "./store";
-import {Home, Navigation, Services, Solution, Project, Footer} from "./components"
+import {Home, Navigation, Services, Solution, Footer} from "./components"
 function App() {
   const mode = useSelector<State>(state => state.mode);
   return (
@@ -10,7 +10,6 @@ function App() {
         <Home />
         <Services/>
         <Solution />
-        <Project />
         <Footer />
       </div>
   );
