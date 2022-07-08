@@ -12,39 +12,46 @@ const Services: React.FC = () => {
     setPopup(true);
     setSelected(index);
   };
-  const scroll : React.MutableRefObject<any> = useRef<any>(null);
+  const scroll: React.MutableRefObject<any> = useRef<any>(null);
   const change: any = () => {
     scroll.current.scrollIntoView({ block: "end", behavior: "smooth" });
-    windows()
+    windows();
   };
-
+  const container: React.MutableRefObject<any> = useRef<any>();
+  const the = () => {
+    console.log(container);
+  };
   const tops = useRef<any>();
-  const windows = () =>     window.scrollBy(0, scrollY)
+  const windows = () => window.scrollBy(0, scrollY);
   const unchange = () => {
-    tops.current.scrollIntoView({block: "end", behavior: "smooth"})
-    windows()
-  }
+    windows();
+    tops.current.scrollIntoView({ block: "end", behavior: "smooth" });
+    the()
+  };
+  const [up, setUp] = useState<boolean>(false);
   return (
     <div
       className={`${
         mode && "text-white"
-      } flex items-center gap-5 py-10 justify-center ${transition}`}
+      } flex items-center gap-32 py-10 justify-center ${transition}`}
     >
       <div className="relative">
-     { <IconButton
-          style={{
-            position: "absolute",
-            top: 0,
-            left: "45%",
-            color: "white",
-            background: "black",
-          }}
-          onClick={unchange}
-        >
-          <KeyboardArrowUp />
-        </IconButton>}
-        <div  className="max-h-[30rem] max-w-[35rem] rounded-xl bg-[#e7f7fb] p-3 flex flex-col gap-5 overflow-scroll">
-        <div ref={tops}></div>
+        {
+          <IconButton
+            style={{
+              position: "absolute",
+              top: 0,
+              left: "45%",
+              color: "white",
+              background: "black",
+            }}
+            onClick={unchange}
+          >
+            <KeyboardArrowUp />
+          </IconButton>
+        }
+        <div className="max-h-[30rem] max-w-[35rem] rounded-xl bg-[#e7f7fb] p-3 flex flex-col gap-5 overflow-scroll">
+          <div ref={tops}></div>
           {knowledge.map(({ type, categorie, desc, image }, index) => (
             <div
               onClick={() => showDesc(categorie, index)}
@@ -91,7 +98,7 @@ const Services: React.FC = () => {
           <div className="text-[#061d48]">My awesome</div>
           <div className="text-[#fb9f26]">services</div>
         </div>
-        <div>
+        <div className="flex flex-col gap-3">
           <div>
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque
             reprehenderit dolorem voluptatem doloremque excepturi accusamus,
@@ -99,7 +106,7 @@ const Services: React.FC = () => {
             voluptatibus architecto totam corporis autem alias. Consectetur,
             voluptatibus.
           </div>
-          <Button variant="contained">Download CV</Button>
+          <Button variant="contained" style={{background: "#fb9f26", maxWidth: 150}}>Download CV</Button>
         </div>
       </div>
     </div>
