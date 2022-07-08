@@ -21,7 +21,7 @@ export const knowledge: Array<knowledge> = [
   {
     type: "Web developement",
     image: Web,
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos fugit cumque culpa, natus quae id minus nostrum error sint corporis.",
+    desc: "Web development is the building and maintenance of websites; it's the work that happens behind the scenes to make a website look great, work fast and perform well with a seamless user experience.",
     categorie: [
       {
         type: "Frontend",
@@ -73,7 +73,7 @@ export const knowledge: Array<knowledge> = [
   {
     type: "Database Management",
     image: Data,
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos fugit cumque culpa, natus quae id minus nostrum error sint corporis.",
+    desc: "Database management refers to the actions a business takes to manipulate and control data to meet necessary conditions throughout the entire data lifecycle.",
     categorie: [
       { type: "Relational", languages: [{ name: "Mysql" }] },
       { type: "Non-relational", languages: [{ name: "Mongodb" }] },
@@ -82,7 +82,7 @@ export const knowledge: Array<knowledge> = [
   {
     type: "Mobile Development",
     image: Phone,
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos fugit cumque culpa, natus quae id minus nostrum error sint corporis.",
+    desc: "Mobile application development is the set of processes and procedures involved in writing software for small, wireless computing devices, such as smartphones and other hand-held devices.",
     categorie: [
       {
         type: "ios",
@@ -106,7 +106,7 @@ export const knowledge: Array<knowledge> = [
   {
     type: "Desktop Development",
     image: desk,
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos fugit cumque culpa, natus quae id minus nostrum error sint corporis.",
+    desc: "Desktop application development is aimed at building desktop software for Mac, Windows, and Linux or upgrading existing desktop apps with new functionality.",
     categorie: [
       {
         type: "window",
@@ -128,9 +128,9 @@ export const knowledge: Array<knowledge> = [
     ],
   },
   {
-    type: "Alogarithm, Machine learning, Artificial Intelligence and Embedded programming",
+    type: "Computer intensive programming",
     image: ai,
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos fugit cumque culpa, natus quae id minus nostrum error sint corporis.",
+    desc: "I have some brilliant skills in alogarithm, machine learning, artifical intelligence and embedded programminng",
     categorie: [
       {
         languages: ["C", "C++", "Matlab", "C#", "R", "Python", "Ruby", "Rust"],
