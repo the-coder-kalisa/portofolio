@@ -8,12 +8,15 @@ function Project() {
   const projects: project[] = [
     {
       link: "https://levitra.vercel.app",
-      desc: "levitra is project for dealing with pharmacies and hospitals",
+      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate repellendus pariatur sequi fugit mollitia labore est aspernatur quis minima, atque veritatis saepe ratione a soluta exercitationem dignissimos. Ipsum, dolor tenetur.",
     },
-    { link: "https://siloam.vercel.app", desc: "siloam is first pharmacy to use my pharmacy services" },
+    {
+      link: "https://siloam.vercel.app",
+      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate repellendus pariatur sequi fugit mollitia labore est aspernatur quis minima, atque veritatis saepe ratione a soluta exercitationem dignissimos. Ipsum, dolor tenetur.",
+    },
     {
       link: "https://instagram-eta-eight.vercel.app",
-      desc: "my instagram clone",
+      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate repellendus pariatur sequi fugit mollitia labore est aspernatur quis minima, atque veritatis saepe ratione a soluta exercitationem dignissimos. Ipsum, dolor tenetur.",
     },
   ];
   return (
@@ -29,7 +32,7 @@ function Project() {
       >
         {projects.map(({ link, desc }, index) => (
           <div>
-            <iframe key={index} src={link} width={500} height={500} />
+            <iframe key={index} src={link} width={550} height={550} />
             <div>{desc}</div>
           </div>
         ))}
