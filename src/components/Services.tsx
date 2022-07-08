@@ -1,4 +1,4 @@
-import { KeyboardArrowDown } from "@mui/icons-material";
+import { KeyboardArrowDown, KeyboardArrowUp } from "@mui/icons-material";
 import { Button, IconButton } from "@mui/material";
 import React, { useState, useRef, useEffect } from "react";
 import { useSelector } from "react-redux";
@@ -12,13 +12,23 @@ const Services: React.FC = () => {
     setPopup(true);
     setSelected(index);
   };
-  const scroll = useRef<any>(null);
+  const scroll: React.MutableRefObject<any> = useRef<any>(null);
   const change: any = () => {
     scroll.current.scrollIntoView({ block: "end", behavior: "smooth" });
   };
-  scroll.current.addEventListener("scroll", () =>{
-    console.log('')
-  })
+  interface option {
+    up: boolean;
+    down: boolean;
+  }
+  const container: (Element | null  )= document.querySelector("div#container");
+  const [options, setOptions] = useState<option>({ up: false, down: true });
+  useEffect(() => {
+    container?!.scrollTop > 0 ? setOptions({...options, ['up']: true}) : setOptions({...options, ['up']: false})
+  });
+  const tops = useRef<any>(null);
+  const unchange = () => {
+    tops.current.scrollIntoView({ block: "end", behavior: "smooth" });
+  };
   return (
     <div
       className={`${
@@ -26,7 +36,25 @@ const Services: React.FC = () => {
       } flex items-center gap-5 py-10 justify-center ${transition}`}
     >
       <div className="relative">
-        <div className="max-h-[30rem] max-w-[35rem] rounded-xl bg-[#e7f7fb] p-3 flex flex-col gap-5 overflow-scroll">
+        {options.up && (
+          <IconButton
+            style={{
+              position: "absolute",
+              top: 0,
+              left: "45%",
+              color: "white",
+              background: "black",
+            }}
+            onClick={unchange}
+          >
+            <KeyboardArrowUp />
+          </IconButton>
+        )}
+        <div ref={tops}></div>
+        <div
+          id="container"
+          className="max-h-[30rem] max-w-[35rem] rounded-xl bg-[#e7f7fb] p-3 flex flex-col gap-5 overflow-scroll"
+        >
           {knowledge.map(({ type, categorie, desc, image }, index) => (
             <div
               onClick={() => showDesc(categorie, index)}
@@ -55,18 +83,20 @@ const Services: React.FC = () => {
 
           <div ref={scroll}></div>
         </div>
-        <IconButton
-          style={{
-            position: "absolute",
-            bottom: 0,
-            left: "45%",
-            color: "white",
-            background: "black",
-          }}
-          onClick={change}
-        >
-          <KeyboardArrowDown />
-        </IconButton>
+        {options.down && (
+          <IconButton
+            style={{
+              position: "absolute",
+              bottom: 0,
+              left: "45%",
+              color: "white",
+              background: "black",
+            }}
+            onClick={change}
+          >
+            <KeyboardArrowDown />
+          </IconButton>
+        )}
       </div>
       <div className="max-w-[40rem]">
         <div className="text-7xl font-bold">
