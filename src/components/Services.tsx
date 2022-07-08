@@ -23,7 +23,7 @@ const Services: React.FC = () => {
   const container: (Element | null  )= document.querySelector("div#container");
   const [options, setOptions] = useState<option>({ up: false, down: true });
   useEffect(() => {
-    container?!.scrollTop > 0 ? setOptions({...options, ['up']: true}) : setOptions({...options, ['up']: false})
+    container!?.scrollTop > 0 ? setOptions({...options, ['up']: true}) : setOptions({...options, ['up']: false})
   });
   const tops = useRef<any>(null);
   const unchange = () => {
