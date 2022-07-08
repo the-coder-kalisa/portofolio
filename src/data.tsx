@@ -21,7 +21,7 @@ export const knowledge: Array<knowledge> = [
   {
     type: "Web developement",
     image: Web,
-    desc: "Web development is the building and maintenance of websites; it's the work that happens behind the scenes to make a website look great, work fast and perform well with a seamless user experience. Me as Web developer, or 'dev', use variety of coding languages. on both backend and frontend",
+    desc: "Web development is the building and maintenance of websites; it's the work that happens behind the scenes to make a website look great, work fast and perform well with a seamless user experience.",
     categorie: [
       {
         type: "Frontend",
@@ -82,7 +82,7 @@ export const knowledge: Array<knowledge> = [
   {
     type: "Mobile Development",
     image: Phone,
-    desc: "Mobile application development is the set of processes and procedures involved in writing software for small, wireless computing devices, such as smartphones and other hand-held devices. Like web application development, mobile application development has its roots in more traditional software development.",
+    desc: "Mobile application development is the set of processes and procedures involved in writing software for small, wireless computing devices, such as smartphones and other hand-held devices.",
     categorie: [
       {
         type: "ios",

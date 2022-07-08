@@ -11,10 +11,17 @@ const Services: React.FC = () => {
         mode && "text-white"
       } flex items-center gap-5 justify-center ${transition}`}
     >
-      <div className="max-h-[40rem] flex flex-col gap-10 overflow-scroll">
+      <div className="max-h-[30rem] max-w-[40rem] rounded-xl bg-[#e7f7fb] p-10 flex flex-col gap-10 overflow-scroll">
         {knowledge.map(({ type, categorie, desc, image }, index) => (
-          <div className="flex items-center gap-4">
-            <img alt={type} className="rounded-full max-w-[12rem] max-h-[10rem]" src={image} />
+          <div
+           
+            className={`flex items-center gap-5`}
+          >
+            <img
+              alt={type}
+              className="rounded-full max-w-[15rem] max-h-[15rem]"
+              src={image}
+            />
             <div>
               <h1 className="text-lg font-bold">{type}</h1>
               <div>{desc}</div>
@@ -23,7 +30,7 @@ const Services: React.FC = () => {
         ))}
       </div>
       <div className="max-w-[40rem]">
-        <div className="text-3xl font-bold">
+        <div className="text-7xl font-bold">
           <div className="text-[#061d48]">My awesome</div>
           <div>services</div>
         </div>
