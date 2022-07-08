@@ -15,7 +15,7 @@ const Home: React.FC = () => {
       <div className="flex flex-col max-w-[40rem] gap-5">
         <div className="flex flex-col gap-10">
           <div className="font-bold flex flex-col gap-10 text-6xl">
-            <div className={`${mode ? "text-white" : "text-black"} ${transition}`}>Hy! I am</div>
+            <div className={`${transition}`}>Hy! I am</div>
             <div className="text-[#e9843f]">KALISA INEZA Giovanni</div>
           </div>
           <div className={`font-[500] ${!mode ? "text-[#000000b6]" : "text-white"} ${transition} `}>

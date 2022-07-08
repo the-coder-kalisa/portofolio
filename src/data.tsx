@@ -3,6 +3,7 @@ import Phone from "./images/s.jpg";
 import Data from "./images/d.jpg";
 import desk from "./images/l.jpg";
 import ai from "./images/a.jpg";
+import { Email, Facebook, GitHub, Instagram, LinkedIn } from "@mui/icons-material";
 interface categorie {
   type?: string;
   languages?: Array<language | string>;
@@ -136,5 +137,37 @@ export const knowledge: Array<knowledge> = [
         languages: ["C", "C++", "Matlab", "C#", "R", "Python", "Ruby", "Rust"],
       },
     ],
+  },
+];
+interface contact {
+  bug: any;
+  desc: string;
+  link: string;
+}
+export const Contacts: contact[] = [
+  {
+    bug: <Email />,
+    desc: "Email",
+    link: "https://mail.google.com/mail/u/0/#search/gthecoderkalisaineza%40gmail.com",
+  },
+  {
+    bug: <Facebook />,
+    desc: "facebook",
+    link: "https://www.facebook.com/nikalisa.45/",
+  },
+  {
+    bug: <GitHub />,
+    desc: "github",
+    link: "https://github.com/the-coder-kalisa",
+  },
+  {
+    bug: <LinkedIn />,
+    desc: "linked in",
+    link: "https://www.linkedin.com/in/kalisa-ineza-giovanni-63a406231",
+  },
+  {
+    bug: <Instagram />,
+    desc: "instargram",
+    link: "https://www.instagram.com/ni_kalisa",
   },
 ];
