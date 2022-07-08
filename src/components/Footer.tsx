@@ -8,7 +8,7 @@ function Footer() {
       className="grid grid-cols-2 gap-4"
       >
         {Contacts.map(({ bug, desc, link }, index) => (
-          <a className="flex items-center gap-5" href={link} key={index}>
+          <a className="flex items-center gap-5 font-semibold" href={link} key={index}>
             <div className="max-w-[1rem]">{bug}</div>
             <div className="text-xl ">{desc}</div>
           </a>
