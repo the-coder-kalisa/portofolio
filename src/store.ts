@@ -17,6 +17,9 @@ const sitedata = createSlice<State, SliceCaseReducers<State>>({
     },
     changeHeight(state, action){
       state.windowHeight = action.payload
+    },
+    changePhone(state, action){
+      state.phone = action.payload;
     }
   },
 });

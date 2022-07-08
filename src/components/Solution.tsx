@@ -1,9 +1,12 @@
 import { Button } from "@mui/material";
+import { useSelector } from "react-redux";
 import business from "../images/business.jpg"
+import { State } from "../store";
 function Solution() {
+  const phone = useSelector<State>((state) => state.phone);
   return (
     <div className="flex gap-20 items-center py-20 justify-center">
-    <img src={business} alt="business" className="max-w-[45rem]"/>
+   {!phone && <img src={business} alt="business" className="max-w-[45rem]"/>}
       <div className="max-w-[50rem] flex flex-col gap-10">
         <div className="text-6xl flex flex-col gap-2 font-bold">
           <div className="text-[#e9843f]">Perfect solution</div>

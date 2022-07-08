@@ -9,6 +9,7 @@ import Twitter from "./Twitter";
 import gif from "../images/gif.png"
 const Home: React.FC = () => {
   const mode = useSelector<State>((state) => state.mode);
+  const phone  = useSelector<State>(state => state.phone)
   const allcircle: string = "w-[22rem] h-[22rem] relative rounded-full";
   return (
     <div className="pt-[5rem] pr-[15rem] pl-[5rem] justify-between items-center flex gap-3">
@@ -30,7 +31,7 @@ const Home: React.FC = () => {
           Hire Me
         </Button>
       </div>
-      <div className="relative">
+      {!phone && <div className="relative">
       <img src={gif} alt="gif" className="absolute top-0 -left-[12rem]"/>
         <div className="absolute items-end top-8 flex z-0">
           <div className={`${allcircle} bg-[#d2f7ff]`}>
@@ -49,8 +50,8 @@ const Home: React.FC = () => {
             <Facebook />
           </div>
         </div>
-        <img src={Profile} className="min-h-[40rem] z-10 relative" alt="me" />
-      </div>
+        <img src={Profile} className="min-h-[30rem] min-w-[30rem] z-10 relative" alt="me" />
+      </div>}
     </div>
   );
 };
