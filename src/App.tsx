@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 import { State, transition } from "./store";
-import {Home, Navigation, Services, Solution} from "./components"
+import {Home, Navigation, Services, Solution, Project} from "./components"
 function App() {
   const mode = useSelector<State>(state => state.mode);
   return (
@@ -9,6 +9,8 @@ function App() {
         <Navigation />
         <Home />
         <Services/>
+        <Solution />
+        <Project />
       </div>
   );
 }

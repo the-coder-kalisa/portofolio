@@ -16,7 +16,7 @@ const Home: React.FC = () => {
         <div className="flex flex-col gap-10">
           <div className="font-bold flex flex-col gap-10 text-6xl">
             <div className={`${mode ? "text-white" : "text-black"} ${transition}`}>Hy! I am</div>
-            <div className="text-[#fca61f]">KALISA INEZA Giovanni</div>
+            <div className="text-[#e9843f]">KALISA INEZA Giovanni</div>
           </div>
           <div className={`font-[500] ${!mode ? "text-[#000000b6]" : "text-white"} ${transition} `}>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum
@@ -25,7 +25,7 @@ const Home: React.FC = () => {
         </div>
         <Button
           variant="contained"
-          style={{ background: "#fb9f26", width: "150px", fontSize: 20, padding: "0 10px", textTransform: "capitalize" }}
+          style={{ background: "#e9843f", width: "150px", fontSize: 20, padding: "0 10px", textTransform: "capitalize" }}
         >
           Hire Me
         </Button>

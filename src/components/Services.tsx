@@ -96,7 +96,7 @@ const Services: React.FC = () => {
       <div className="max-w-[40rem]">
         <div className="text-7xl font-bold">
           <div className="text-[#061d48]">My awesome</div>
-          <div className="text-[#fb9f26]">services</div>
+          <div className="text-[#e9843f]">services</div>
         </div>
         <div className="flex flex-col gap-3">
           <div>
@@ -106,7 +106,7 @@ const Services: React.FC = () => {
             voluptatibus architecto totam corporis autem alias. Consectetur,
             voluptatibus.
           </div>
-          <Button variant="contained" style={{background: "#fb9f26", maxWidth: 150}}>Download CV</Button>
+          <Button variant="contained" style={{background: "#e9843f", maxWidth: 150}}>Download CV</Button>
         </div>
       </div>
     </div>

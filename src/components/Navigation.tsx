@@ -33,7 +33,7 @@ const Navigation: React.FC = () => {
           <Button
           variant="contained"
             style={{
-              backgroundColor: "#fb992d",
+              backgroundColor: "#e9843f",
               color: "white",
               borderRadius: "9999px",
               padding: "7px 20px",
