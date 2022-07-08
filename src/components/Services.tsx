@@ -15,11 +15,14 @@ const Services: React.FC = () => {
   const scroll : React.MutableRefObject<any> = useRef<any>(null);
   const change: any = () => {
     scroll.current.scrollIntoView({ block: "end", behavior: "smooth" });
+    windows()
   };
 
   const tops = useRef<any>();
+  const windows = () =>     window.scrollBy(0, scrollY)
   const unchange = () => {
     tops.current.scrollIntoView({block: "end", behavior: "smooth"})
+    windows()
   }
   return (
     <div
@@ -40,8 +43,8 @@ const Services: React.FC = () => {
         >
           <KeyboardArrowUp />
         </IconButton>}
-        <div ref={tops}></div>
         <div  className="max-h-[30rem] max-w-[35rem] rounded-xl bg-[#e7f7fb] p-3 flex flex-col gap-5 overflow-scroll">
+        <div ref={tops}></div>
           {knowledge.map(({ type, categorie, desc, image }, index) => (
             <div
               onClick={() => showDesc(categorie, index)}
