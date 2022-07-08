@@ -24,7 +24,7 @@ const Services: React.FC = () => {
   const [options, setOptions] = useState<option>({ up: false, down: true });
   useEffect(() => {
     container!?.scrollTop > 0 ? setOptions({...options, ['up']: true}) : setOptions({...options, ['up']: false});
-    container!?.scrollTop === 532 ? setOptions({...options, ['down']: false}) : setOptions({...options, ['down']: true})
+    container!?.scrollTop === 474 ? setOptions({...options, ['down']: false}) : setOptions({...options, ['down']: true})
   });
   const tops = useRef<any>(null);
   const unchange = () => {
