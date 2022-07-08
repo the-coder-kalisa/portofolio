@@ -6,10 +6,11 @@ import {
 export interface State {
   mode: boolean;
   windowHeight: number;
+  phone: boolean;
 }
 const sitedata = createSlice<State, SliceCaseReducers<State>>({
   name: "mode",
-  initialState: { mode: false, windowHeight: 0 },
+  initialState: { mode: false, windowHeight: 0, phone: false },
   reducers: {
     changeMode(state, action) {
       state.mode = action.payload;

@@ -19,7 +19,7 @@ const Navigation: React.FC = () => {
     dispatch(actions.changeHeight(scrollY));
   })
   return (
-    <div className="flex items-center fixed z-50 w-full bg-transparent py-5 pl-20 pr-10 justify-between">
+    <div className={`flex items-center fixed z-50 w-full ${transition} ${!mode ? "bg-white" : "bg-[#091b2c]"} py-5 pl-20 pr-10 justify-between`}>
       <Link to="/" className={`${mode && "text-white"} ${transition} text-xl font-bold`}>
         Personal
       </Link>
