@@ -8,13 +8,13 @@ function App() {
   useEffect(() => {
     window.addEventListener("resize", () => {
       window.innerWidth <= 1110
-        ? dispacth(actions.changePhone(true))
-        : dispacth(actions.changePhone(false));
+        ? ( window.innerWidth <= 800 ? dispacth(actions.changePhone("phone")) :  dispacth(actions.changePhone("tablet")))
+        : dispacth(actions.changePhone("destkop"))
     });
   });
   useEffect(() => {
     window.innerWidth <= 1110
-      ? dispacth(actions.changePhone(true))
+    ? ( window.innerWidth <= 800 ? dispacth(actions.changePhone("phone")) :  dispacth(actions.changePhone("tablet")))
       : dispacth(actions.changePhone(false));
   }, []);
   return (

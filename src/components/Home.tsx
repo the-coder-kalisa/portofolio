@@ -11,8 +11,9 @@ const Home: React.FC = () => {
   const mode = useSelector<State>((state) => state.mode);
   const phone  = useSelector<State>(state => state.phone)
   const allcircle: string = "w-[22rem] h-[22rem] relative rounded-full";
+  console.log(phone)
   return (
-    <div className="pt-[5rem] pr-[15rem] pl-[5rem] justify-between items-center flex gap-3">
+    <div className={`pt-[5rem] pr-[15rem] pl-[5rem] ${(phone === "tablet" || phone === "phone") && "flex-col-reverse"} justify-between items-center flex gap-3`}>
       <div className="flex flex-col max-w-[40rem] gap-5">
         <div className="flex flex-col gap-10">
           <div className="font-bold flex flex-col gap-10 text-6xl">
@@ -31,7 +32,7 @@ const Home: React.FC = () => {
           Hire Me
         </Button>
       </div>
-      {!phone && <div className="relative">
+      <div className="relative">
       <img src={gif} alt="gif" className="absolute top-0 -left-[12rem]"/>
         <div className="absolute items-end top-8 flex z-0">
           <div className={`${allcircle} bg-[#d2f7ff]`}>
@@ -51,7 +52,7 @@ const Home: React.FC = () => {
           </div>
         </div>
         <img src={Profile} className="min-h-[30rem] min-w-[30rem] z-10 relative" alt="me" />
-      </div>}
+      </div>
     </div>
   );
 };
