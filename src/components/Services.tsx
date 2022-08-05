@@ -1,9 +1,10 @@
 import { KeyboardArrowDown, KeyboardArrowUp } from "@mui/icons-material";
 import { Button, IconButton } from "@mui/material";
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef } from "react";
 import { useSelector } from "react-redux";
 import { knowledge } from "../data";
 import { State, transition } from "../store";
+import CV from "../images/desktop.png";
 const Services: React.FC = () => {
   const mode = useSelector<State>((state) => state.mode);
   const [select, setSelected] = useState<number | undefined>(undefined);
@@ -123,9 +124,12 @@ const Services: React.FC = () => {
             voluptatibus architecto totam corporis autem alias. Consectetur,
             voluptatibus.
           </div>
+
           <Button
             variant="contained"
             style={{ background: "#e9843f", maxWidth: 150 }}
+            href={CV}
+            download
           >
             Download CV
           </Button>
