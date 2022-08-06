@@ -10,7 +10,7 @@ const NotFound: FC = () => {
         mode ? "bg-[#091b2c] text-white" : "bg-white text-black"
       } flex items-center h-[100vh] justify-center`}
     >
-       404 This page is not found
+      404 This page is not found
     </div>
   );
 };

@@ -45,8 +45,8 @@ const Home: FC = () => {
             } ${transition} `}
           >
             Professional Web, desktop and mobile developer with more than 3
-            years of experience. I am the owner of projects like levitra, transduite and
-            involved in projects like aquarens and others.
+            years of experience. I am the owner of projects like levitra,
+            transduite and involved in projects like aquarens and others.
           </div>
         </div>
         <Button

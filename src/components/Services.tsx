@@ -14,12 +14,12 @@ const Services: React.FC = () => {
     setHoverd(index);
   };
   useEffect(() => {
-    if(desc) {
-      setPopup(true)
-    }else{
-      setPopup(false)
+    if (desc) {
+      setPopup(true);
+    } else {
+      setPopup(false);
     }
-  }, [desc])
+  }, [desc]);
   const [font, setFont] = useState<boolean>(true);
   useEffect(() => {
     if (phone === "phone") {
@@ -30,7 +30,7 @@ const Services: React.FC = () => {
   }, [phone]);
   return (
     <div
-    id="services"
+      id="services"
       className={`${mode && "text-white"} flex relative ${
         phone === "phone" || phone === "tablet"
           ? "flex-col-reverse px-5"
@@ -49,9 +49,13 @@ const Services: React.FC = () => {
             className={`hover:bg-gradient-to-r from-[#f5c5be] relative via-[#febf83] to-[#d6aada] p-3 rounded-xl`}
             key={index}
           >
-            {popup && hoverd === index &&  <div className="absolute bg-white right-0 text-black">hello</div>}
+            {popup && hoverd === index && (
+              <div className="absolute bg-white right-0 text-black">hello</div>
+            )}
             <div
-              className={`flex ${!font ? "flex-col items-start" : "items-center"} p-5 rounded-xl ${
+              className={`flex ${
+                !font ? "flex-col items-start" : "items-center"
+              } p-5 rounded-xl ${
                 mode ? "bg-[#091b2c]" : "bg-white"
               } ${transition} gap-5 cursor-pointer`}
             >

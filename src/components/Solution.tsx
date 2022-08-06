@@ -10,7 +10,7 @@ function Solution() {
     () => () => {
       if (phone === "phone") {
         setFont(false);
-      }else{
+      } else {
         setFont(true);
       }
     },
@@ -18,7 +18,7 @@ function Solution() {
   );
   return (
     <div
-    id="solution"
+      id="solution"
       className={`flex ${
         (phone === "phone" || phone === "tablet") && "flex-col-reverse px-5"
       } gap-20 items-center py-20 justify-center`}
@@ -35,7 +35,7 @@ function Solution() {
           } flex flex-col gap-2 font-bold`}
         >
           <div className="text-[#e9843f]">Perfect solution</div>
-          <div>for your	 business</div>
+          <div>for your business</div>
         </div>
         <div className={`flex flex-col gap-5`}>
           <div

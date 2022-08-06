@@ -10,7 +10,7 @@ export interface State {
 }
 const sitedata = createSlice<State, SliceCaseReducers<State>>({
   name: "mode",
-  initialState: { mode: true, windowHeight: 0, phone: "desktop"},
+  initialState: { mode: true, windowHeight: 0, phone: "desktop" },
   reducers: {
     changeMode(state, action) {
       state.mode = action.payload;
@@ -20,7 +20,7 @@ const sitedata = createSlice<State, SliceCaseReducers<State>>({
     },
     changePhone(state, action) {
       state.phone = action.payload;
-    }
+    },
   },
 });
 const store = configureStore({

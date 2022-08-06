@@ -153,12 +153,7 @@ export const FooterData: Footer[] = [
   { title: "Explore", links: ["Home", "Services", "Solution", "Aboutus"] },
   {
     title: "Follow",
-    links: [
-      "Facebook",
-      "Instagram",
-      "LinkedIn",
-      "Github",
-    ],
+    links: ["Facebook", "Instagram", "LinkedIn", "Github"],
   },
   {
     title: "New Business",

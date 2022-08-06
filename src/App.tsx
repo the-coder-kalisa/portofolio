@@ -4,7 +4,9 @@ import { Home, Navigation, Services, Solution, Footer } from "./components";
 import { useEffect, useState } from "react";
 import { Router } from "react-router-dom";
 function App() {
-  const {mode, phone, windowHeight} = useSelector<State, State>((state) => state);
+  const { mode, phone, windowHeight } = useSelector<State, State>(
+    (state) => state
+  );
   const dispacth = useDispatch();
   useEffect(() => {
     window.addEventListener("resize", () => {
