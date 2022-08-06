@@ -71,7 +71,7 @@ const Navigation: React.FC = () => {
       <Link
         to="/"
         className={`${mode && "text-white"} ${transition} ${
-          font ? "text-xl " : "text-[0.8rem]"
+          font ? "text-xl " : "text-[1rem]"
         } font-bold`}
       >
         Personal
@@ -109,10 +109,10 @@ const Navigation: React.FC = () => {
             {mode ? (
               <LightMode
                 style={{ color: "white" }}
-                sx={{ height: 18, width: 18 }}
+                sx={{ height: 20, width: 20 }}
               />
             ) : (
-              <DarkMode sx={{ height: 18, width: 18 }} />
+              <DarkMode sx={{ height: 20, width: 20 }} />
             )}
           </IconButton>
         </div>
