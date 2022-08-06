@@ -1,4 +1,5 @@
-import { Email } from "@mui/icons-material";
+import { ChevronRight, Email, Send } from "@mui/icons-material";
+import { Button } from "@mui/material";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
@@ -17,12 +18,17 @@ function Footer() {
     },
     [phone]
   );
+  const [drops, setDrops] = useState<number[]>([]);
+  const drop = (index: number) => {
+    let dro = drops.filter((drop) => drop !== index);
+    drops.includes(index) ? setDrops(dro) : setDrops([...drops, index]);
+  };
   return (
     <div
       id="aboutus"
-      className={`text-white flex  gap-10 px-5 ${
+      className={`text-white flex px-5 ${
         mode ? "bg-transparent" : "bg-[#091b2c]"
-      } ${transition}`}
+      } ${transition} ${!font ? "flex-col gap-5" : "gap-10"}`}
     >
       <div className="flex flex-col gap-3">
         <Link
@@ -38,38 +44,92 @@ function Footer() {
           above services.
         </div>
       </div>
-      {FooterData.map(({ title, links }, index) => (
-        <div key={index} className="flex flex-col gap-3">
-          <h3 className="font-bold text-xl">{title}</h3>
-          <div className="flex flex-col gap-2">
-            {links.map((link, index) => (
-              <Link to={link} key={index}>
-                {link}
-              </Link>
-            ))}
+      {!phone
+        ? FooterData.map(({ title, links }, index) => (
+            <div key={index} className="flex flex-col gap-3">
+              <h3 className="font-bold text-xl">{title}</h3>
+              <div className="flex flex-col gap-2">
+                {links.map((link, index) => (
+                  <Link to={link} key={index}>
+                    {link}
+                  </Link>
+                ))}
+              </div>
+            </div>
+          ))
+        : FooterData.map(({ title, links }, index) => (
+            <div
+              key={index}
+              style={{
+                height: drops.includes(index) ? (links.length+1) * 31 : "2rem",
+              }}
+              className={` duration-500 flex flex-col gap-5 overflow-hidden min-w-full`}
+            >
+              <div onClick={() : void => drop(index)} className="font-bold cursor-pointer text-xl flex  w-full justify-between">
+                <h1>{title}</h1>
+                <ChevronRight
+                  style={
+                    !drops.includes(index)
+                      ? { transitionDuration: "500ms" }
+                      : {
+                          transform: "rotate(90deg)",
+                          transitionDuration: "500ms",
+                        }
+                  }
+                />
+              </div>
+              <div className="flex flex-col gap-2">
+                {links.map((link, index) => (
+                  <Link to={link} className="text-[1rem]" key={index}>
+                    {link}
+                  </Link>
+                ))}
+              </div>
+            </div>
+          ))}
+      <div className="flex flex-col gap-2">
+        <h3 className="font-bold text-xl">Text me on email</h3>
+        <div className="flex flex-col items-end gap-4">
+          <div
+            className={`${
+              !mode ? "bg-[#091b2c]" : "bg-white"
+            } ${transition} flex justify-end gap-3 p-2`}
+          >
+            <Email
+              sx={{ height: 25, width: 25 }}
+              style={{
+                color: mode ? "black" : "white",
+                transitionProperty: "all",
+                transitionTimingFunction: "cubic-bezier(0.4, 0, 0.2, 1)",
+                transitionDuration: "100ms",
+              }}
+            />
+            <input
+              type="text"
+              placeholder="Enter your Email"
+              className={`bg-[transparent] w-full border-none outline-none ${
+                mode ? "text-black" : "text-white"
+              }`}
+            />
           </div>
-        </div>
-      ))}
-      <div>
-        <h3 className="font-bold transition-all text-xl">Text me on email</h3>
-        <div
-          className={`${
-            !mode ? "bg-[#091b2c]" : "bg-white"
-          } ${transition} flex`}
-        >
-          <Email
+          <textarea
+            placeholder="Enter your information"
+            className={`resize-none w-full min-h-[53px] ${
+              mode ? "text-black" : "text-white"
+            }`}
+          ></textarea>
+          <Button
+            sx={{ width: 100 }}
             style={{
-              color: mode ? "black" : "white",
-              transitionProperty: "all",
-              transitionTimingFunction: "cubic-bezier(0.4, 0, 0.2, 1)",
-              transitionDuration: "150ms",
+              background: "#e9843f",
+              display: "flex",
+              gap: 5,
+              color: "#0e11bb",
             }}
-          />
-          <input
-            type="text"
-            placeholder="Enter your Email"
-            className="bg-[transparent]"
-          />
+          >
+            <span>send</span>
+            <Send />
+          </Button>
         </div>
       </div>
     </div>
