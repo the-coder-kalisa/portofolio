@@ -30,7 +30,7 @@ const Services: React.FC = () => {
       } gap-32 py-10 justify-center ${transition}`}
     >
       <div
-        className={`max-h-[30rem] ${font && "max-w-[45rem]"} rounded-xl ${
+        className={`max-h-[30rem] ${font && "max-w-[40rem]"} rounded-xl ${
           mode ? "bg-[#19305c]" : "bg-[#e7f7fb] "
         } ${transition} p-3 flex  flex-col gap-5 overflow-scroll`}
       >
@@ -38,8 +38,8 @@ const Services: React.FC = () => {
           <div
             onClick={() => showDesc(categorie, index)}
             className={`${
-              select !== index ? "hover:" : ""
-            } bg-gradient-to-r from-[#f5c5be] via-[#febf83] to-[#d6aada] p-3 rounded-xl`}
+              select === index && "bg-gradient-to-r from-[#f5c5be] via-[#febf83] to-[#d6aada]"
+            } hover:bg-gradient-to-r from-[#f5c5be] via-[#febf83] to-[#d6aada] p-3 rounded-xl`}
             key={index}
           >
             <div
@@ -53,8 +53,8 @@ const Services: React.FC = () => {
                 className={`w-[10rem] h-[10rem] rounded-full`}
               />
               <div className="flex flex-col gap-1">
-                <h1 className="text-sm font-bold">{type}</h1>
-                <div className="text-xs max-h-20 overflow-hidden overflow-ellipsis">
+                <h1 className="text-xl font-bold">{type}</h1>
+                <div className=" text-xs max-h-20 overflow-hidden overflow-ellipsis">
                   {desc}
                 </div>
               </div>

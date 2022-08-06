@@ -9,9 +9,9 @@ function Footer() {
   const { phone, mode } = useSelector<State, State>((state) => state);
   const [font, setFont] = useState<boolean>(true);
   useEffect(() => {
-    if(phone === "tablet" || phone === "phone"){
+    if (phone === "tablet" || phone === "phone") {
       setFont(false);
-    }else{
+    } else {
       setFont(true);
     }
   }, [phone]);
@@ -23,7 +23,7 @@ function Footer() {
   return (
     <div
       id="aboutus"
-      className={`text-white flex px-5 ${
+      className={`text-white py-5 flex justify-between px-5 ${
         mode ? "bg-transparent" : "bg-[#091b2c]"
       } ${transition} ${!font ? "flex-col gap-5" : "gap-10"}`}
     >
@@ -72,10 +72,18 @@ function Footer() {
                 <ChevronRight
                   style={
                     !drops.includes(index)
-                      ? { transitionDuration: "500ms" }
+                      ? {
+                          transitionProperty: "all",
+                          transitionTimingFunction:
+                            "cubic-bezier(0.4, 0, 0.2, 1)",
+                          transitionDuration: "100ms",
+                        }
                       : {
                           transform: "rotate(90deg)",
-                          transitionDuration: "500ms",
+                          transitionProperty: "all",
+                          transitionTimingFunction:
+                            "cubic-bezier(0.4, 0, 0.2, 1)",
+                          transitionDuration: "100ms",
                         }
                   }
                 />
@@ -95,7 +103,7 @@ function Footer() {
           <div
             className={`${
               !mode ? "bg-[#091b2c]" : "bg-white"
-            } ${transition} flex justify-end gap-3 p-2`}
+            } ${transition} flex justify-end w-full gap-5 p-2`}
           >
             <Email
               sx={{ height: 25, width: 25 }}
