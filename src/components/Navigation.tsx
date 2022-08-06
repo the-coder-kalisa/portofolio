@@ -45,7 +45,7 @@ const Navigation: React.FC = () => {
       )}
       <Link
         to="/"
-        className={`${mode && "text-white"} ${transition} ${font ? "text-xl " : "text-lg"} font-bold`}
+        className={`${mode && "text-white"} ${transition} ${font ? "text-xl " : "text-[1rem]"} font-bold`}
       >
         Personal
       </Link>
@@ -66,9 +66,9 @@ const Navigation: React.FC = () => {
             ))}
           </div>
         )}
-        <div className="flex items-center gap-5">
+        <div className="flex items-center gap-5 h-3">
           <IconButton onClick={changeMode}>
-            {mode ? <LightMode style={{ color: "white" }} /> : <DarkMode />}
+            {mode ? <LightMode style={{ color: "white" }} sx={{height: 20, width: 20}}/> : <DarkMode sx={{height: 20, width: 20}}/>}
           </IconButton>
         </div>
       </div>

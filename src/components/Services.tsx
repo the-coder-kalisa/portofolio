@@ -5,7 +5,7 @@ import { knowledge } from "../data";
 import { State, transition } from "../store";
 import CV from "../images/desktop.png";
 const Services: React.FC = () => {
-  const {mode, phone} = useSelector<State, State>((state) => state);
+  const { mode, phone } = useSelector<State, State>((state) => state);
   const [select, setSelected] = useState<number | undefined>(undefined);
   const [popup, setPopup] = useState<boolean>(false);
   const showDesc: any = (categorie: Array<object | string>, index: number) => {
@@ -22,12 +22,16 @@ const Services: React.FC = () => {
   }, [phone]);
   return (
     <div
-      className={`${mode && "text-white"} flex  ${(phone === "phone" || phone === "tablet" ) ? "flex-col-reverse px-5" : "items-center"} gap-32 py-10 justify-center ${transition}`}
+      className={`${mode && "text-white"} flex  ${
+        phone === "phone" || phone === "tablet"
+          ? "flex-col-reverse px-5"
+          : "items-center"
+      } gap-32 py-10 justify-center ${transition}`}
     >
       <div
-        className={`max-h-[30rem] min-w-[full] rounded-xl ${
+        className={`max-h-[30rem] rounded-xl ${
           mode ? "bg-[#19305c]" : "bg-[#e7f7fb] "
-        } ${transition} p-3 flex flex-col gap-5 overflow-scroll`}
+        } ${transition} p-3 flex  flex-col gap-5 overflow-scroll`}
       >
         {knowledge.map(({ type, categorie, desc, image }, index) => (
           <div
@@ -38,7 +42,7 @@ const Services: React.FC = () => {
             key={index}
           >
             <div
-              className={`flex ${!font && "flex-col"} items-center p-5 rounded-xl ${
+              className={`flex ${!font ? "flex-col items-start" : "items-center"} p-5 rounded-xl ${
                 mode ? "bg-[#091b2c]" : "bg-white"
               } ${transition} gap-5 cursor-pointer`}
             >
