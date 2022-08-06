@@ -140,34 +140,8 @@ export const knowledge: Array<knowledge> = [
   },
 ];
 interface contact {
-  bug: any;
-  desc: string;
-  link: string;
+  
 }
 export const Contacts: contact[] = [
-  {
-    bug: <Email />,
-    desc: "Email",
-    link: "https://mail.google.com/mail/u/0/#search/gthecoderkalisaineza%40gmail.com",
-  },
-  {
-    bug: <Facebook />,
-    desc: "facebook",
-    link: "https://www.facebook.com/nikalisa.45/",
-  },
-  {
-    bug: <GitHub />,
-    desc: "github",
-    link: "https://github.com/the-coder-kalisa",
-  },
-  {
-    bug: <LinkedIn />,
-    desc: "linked in",
-    link: "https://www.linkedin.com/in/kalisa-ineza-giovanni-63a406231",
-  },
-  {
-    bug: <Instagram />,
-    desc: "instargram",
-    link: "https://www.instagram.com/ni_kalisa",
-  },
+  
 ];
