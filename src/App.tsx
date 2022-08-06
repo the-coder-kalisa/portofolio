@@ -2,8 +2,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { actions, State, transition } from "./store";
 import { Home, Navigation, Services, Solution, Footer } from "./components";
 import { useEffect, useState } from "react";
+import { Router } from "react-router-dom";
 function App() {
-  const mode = useSelector<State>((state) => state.mode);
+  const {mode, phone, windowHeight} = useSelector<State, State>((state) => state);
   const dispacth = useDispatch();
   useEffect(() => {
     window.addEventListener("resize", () => {
@@ -21,7 +22,6 @@ function App() {
         : dispacth(actions.changePhone("tablet"))
       : dispacth(actions.changePhone(false));
   }, []);
-  const phone = useSelector<State, string>((state) => state.phone);
   const [font, setFont] = useState<boolean>(true);
   useEffect(
     () => () => {
@@ -32,6 +32,15 @@ function App() {
       }
     },
     [phone]
+  );
+  useEffect(
+    () => () => {
+     if(windowHeight === 0){
+      !location.href.includes("#home") && location.assign(location.href.concat("#home"))
+     }
+    },
+
+    []
   );
   return (
     <div

@@ -22,6 +22,7 @@ const Services: React.FC = () => {
   }, [phone]);
   return (
     <div
+    id="services"
       className={`${mode && "text-white"} flex  ${
         phone === "phone" || phone === "tablet"
           ? "flex-col-reverse px-5"
