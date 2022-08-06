@@ -29,7 +29,7 @@ const Services: React.FC = () => {
       } gap-32 py-10 justify-center ${transition}`}
     >
       <div
-        className={`max-h-[30rem] rounded-xl ${
+        className={`max-h-[30rem] ${font && "max-w-[45rem]"} rounded-xl ${
           mode ? "bg-[#19305c]" : "bg-[#e7f7fb] "
         } ${transition} p-3 flex  flex-col gap-5 overflow-scroll`}
       >
