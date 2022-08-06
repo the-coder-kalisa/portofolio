@@ -35,7 +35,7 @@ function Solution() {
           } flex flex-col gap-2 font-bold`}
         >
           <div className="text-[#e9843f]">Perfect solution</div>
-          <div>for you business</div>
+          <div>for your	 business</div>
         </div>
         <div className={`flex flex-col gap-5`}>
           <div

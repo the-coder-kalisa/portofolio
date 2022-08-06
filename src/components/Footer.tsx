@@ -23,7 +23,7 @@ function Footer() {
   return (
     <div
       id="aboutus"
-      className={`text-white py-5 flex justify-between px-5 ${
+      className={`text-white py-5 flex justify-between px-12 ${
         mode ? "bg-transparent" : "bg-[#091b2c]"
       } ${transition} ${!font ? "flex-col gap-5" : "gap-10"}`}
     >
