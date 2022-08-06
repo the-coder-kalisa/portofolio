@@ -3,7 +3,13 @@ import Phone from "./images/s.jpg";
 import Data from "./images/d.jpg";
 import desk from "./images/l.jpg";
 import ai from "./images/a.jpg";
-import { Email, Facebook, GitHub, Instagram, LinkedIn } from "@mui/icons-material";
+import {
+  Email,
+  Facebook,
+  GitHub,
+  Instagram,
+  LinkedIn,
+} from "@mui/icons-material";
 interface categorie {
   type?: string;
   languages?: Array<language | string>;
@@ -139,9 +145,23 @@ export const knowledge: Array<knowledge> = [
     ],
   },
 ];
-interface contact {
-  
+interface Footer {
+  title: string;
+  links: string[];
 }
-export const Contacts: contact[] = [
-  
+export const FooterData: Footer[] = [
+  { title: "Explore", links: ["Home", "Services", "Solution", "Aboutus"] },
+  {
+    title: "Follow",
+    links: [
+      "Facebook",
+      "Instagram",
+      "LinkedIn",
+      "Github",
+    ],
+  },
+  {
+    title: "New Business",
+    links: ["gthecoderkalisaineza@gmail.com", "+250785964206"],
+  },
 ];
