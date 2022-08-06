@@ -1,39 +1,65 @@
 import { Button } from "@mui/material";
-import React from "react";
+import { FC, useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import Profile from "../images/me.png";
 import { State, transition } from "../store";
 import Facebook from "./Facebook";
 import Google from "./Google";
 import Twitter from "./Twitter";
-import gif from "../images/gif.png"
-const Home: React.FC = () => {
-  const mode = useSelector<State>((state) => state.mode);
-  const phone  = useSelector<State>(state => state.phone)
+import gif from "../images/gif.png";
+const Home: FC = () => {
+  const {mode, phone} = useSelector<State, State>(state => state)
   const allcircle: string = "w-[22rem] h-[22rem] relative rounded-full";
-  console.log(phone)
+  const [font, setFont] = useState<boolean>(true);
+  useEffect(() => {
+    if (phone === "phone") {
+      setFont(false);
+    } else {
+      setFont(true);
+    }
+  }, [phone]);
   return (
-    <div className={`pt-[5rem] pr-[15rem] pl-[5rem] ${(phone === "tablet" || phone === "phone") && "flex-col-reverse"} justify-between items-center flex gap-3`}>
-      <div className="flex flex-col max-w-[40rem] gap-5">
-        <div className="flex flex-col gap-10">
-          <div className="font-bold flex flex-col gap-10 text-6xl">
+    <div
+      className={` ${
+        phone === "tablet" || phone === "phone"
+          ? "flex-col pt-[10rem] px-5"
+          : "pt-[5rem] pr-[15rem] pl-[5rem]"
+      } justify-between items-center flex gap-3`}
+    >
+      <div className={`flex flex-col max-w-[40rem]  gap-5`}>
+        <div className={`flex flex-col ${!font ? "gap-3" : "gap-10"}`}>
+          <div
+            className={`font-bold flex flex-col ${
+              font ? "text-6xl gap-10" : "text-4xl gap-2"
+            }`}
+          >
             <div className={`${transition}`}>Hy! I am</div>
             <div className="text-[#e9843f]">KALISA INEZA Giovanni</div>
           </div>
-          <div className={`font-[500] ${!mode ? "text-[#000000b6]" : "text-white"} ${transition} `}>
+          <div
+            className={`font-[500] ${
+              !mode ? "text-[#000000b6]" : "text-white"
+            } ${transition} `}
+          >
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum
             iste quibusdam ad rem laboriosam placeat quas
           </div>
         </div>
         <Button
           variant="contained"
-          style={{ background: "#e9843f", width: "150px", fontSize: 20, padding: "0 10px", textTransform: "capitalize" }}
+          style={{
+            background: "#e9843f",
+            width: "150px",
+            fontSize: 20,
+            padding: "0 10px",
+            textTransform: "capitalize",
+          }}
         >
           Hire Me
         </Button>
       </div>
       <div className="relative">
-      <img src={gif} alt="gif" className="absolute top-0 -left-[12rem]"/>
+        <img src={gif} alt="gif" className="absolute top-0 -left-[12rem]" />
         <div className="absolute items-end top-8 flex z-0">
           <div className={`${allcircle} bg-[#d2f7ff]`}>
             <div className="absolute cursor-pointer bg-white rounded-full p-5 drop-shadow-xl top-[5rem]">
@@ -51,7 +77,11 @@ const Home: React.FC = () => {
             <Facebook />
           </div>
         </div>
-        <img src={Profile} className="min-h-[30rem] min-w-[30rem] z-10 relative" alt="me" />
+        <img
+          src={Profile}
+          className="min-h-[30rem] min-w-[30rem] z-10 relative"
+          alt="me"
+        />
       </div>
     </div>
   );

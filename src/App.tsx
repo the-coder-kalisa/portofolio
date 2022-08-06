@@ -1,27 +1,43 @@
 import { useDispatch, useSelector } from "react-redux";
 import { actions, State, transition } from "./store";
 import { Home, Navigation, Services, Solution, Footer } from "./components";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 function App() {
   const mode = useSelector<State>((state) => state.mode);
   const dispacth = useDispatch();
   useEffect(() => {
     window.addEventListener("resize", () => {
       window.innerWidth <= 1110
-        ? ( window.innerWidth <= 800 ? dispacth(actions.changePhone("phone")) :  dispacth(actions.changePhone("tablet")))
-        : dispacth(actions.changePhone("destkop"))
+        ? window.innerWidth <= 800
+          ? dispacth(actions.changePhone("phone"))
+          : dispacth(actions.changePhone("tablet"))
+        : dispacth(actions.changePhone("destkop"));
     });
   });
   useEffect(() => {
     window.innerWidth <= 1110
-    ? ( window.innerWidth <= 800 ? dispacth(actions.changePhone("phone")) :  dispacth(actions.changePhone("tablet")))
+      ? window.innerWidth <= 800
+        ? dispacth(actions.changePhone("phone"))
+        : dispacth(actions.changePhone("tablet"))
       : dispacth(actions.changePhone(false));
   }, []);
+  const phone = useSelector<State, string>((state) => state.phone);
+  const [font, setFont] = useState<boolean>(true);
+  useEffect(
+    () => () => {
+      if (phone === "phone" || phone === "tablet") {
+        setFont(false);
+      } else {
+        setFont(true);
+      }
+    },
+    [phone]
+  );
   return (
     <div
       className={`${
         mode ? "bg-[#091b2c] text-white" : "bg-[white] text-black"
-      } ${transition}`}
+      } ${transition} ${font ? "text-lg" : "text-sm"}`}
     >
       <Navigation />
       <Home />

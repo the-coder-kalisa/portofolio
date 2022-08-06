@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import { Link } from "react-router-dom";
 import { Button, IconButton } from "@mui/material";
 import { BsList } from "react-icons/bs";
@@ -8,8 +8,7 @@ import { DarkMode, LightMode } from "@mui/icons-material";
 
 const Navigation: React.FC = () => {
   const dispatch = useDispatch();
-  const mode = useSelector<State, boolean>((state) => state.mode);
-  const phone = useSelector<State, string>((state) => state.phone);
+  const {mode, phone} = useSelector<State, State>(state => state)
   const buttons: string[] = ["Home", "Services", "About Us"];
   const changeMode = () => {
     dispatch(actions.changeMode(!mode));
@@ -18,6 +17,14 @@ const Navigation: React.FC = () => {
     dispatch(actions.changeHeight(scrollY));
   });
   const [droped, setDroped] = useState<boolean>(false);
+  const [font, setFont] = useState<boolean>(true);
+  useEffect(()=> () =>{
+    if(phone === "tablet" || phone === "phone"){
+      setFont(false);
+    }else{
+      setFont(true);
+    }
+  }, [phone])
   return (
     <div
       className={`flex items-center fixed z-50 w-full ${transition} ${
@@ -26,7 +33,7 @@ const Navigation: React.FC = () => {
     >
       {phone === "phone" && (
         <div className="relative" onMouseEnter={() => setDroped(true)} onMouseLeave={() => setDroped(false)}>
-          <BsList style={{height: 30, width: 30, cursor: "pointer"}}/>
+          <BsList style={{height: "1.5em", width: "1.5em", cursor: "pointer"}}/>
           {droped && <div className="absolute bg-white gap-3   ml-2 flex flex-col">
             {buttons.map((button, index) =>(
               <button key={index} className="min-w-[10rem] hover:bg-[#e9843f] p-3 hover:text-white text-black flex justify-start">
@@ -38,7 +45,7 @@ const Navigation: React.FC = () => {
       )}
       <Link
         to="/"
-        className={`${mode && "text-white"} ${transition} text-xl font-bold`}
+        className={`${mode && "text-white"} ${transition} ${font ? "text-xl " : "text-lg"} font-bold`}
       >
         Personal
       </Link>
@@ -60,19 +67,6 @@ const Navigation: React.FC = () => {
           </div>
         )}
         <div className="flex items-center gap-5">
-          <Button
-            variant="contained"
-            style={{
-              backgroundColor: "#e9843f",
-              color: "white",
-              borderRadius: "9999px",
-              padding: "7px 20px",
-              textTransform: "capitalize",
-            }}
-            className="drop-shadow-lg"
-          >
-            Contact Us
-          </Button>
           <IconButton onClick={changeMode}>
             {mode ? <LightMode style={{ color: "white" }} /> : <DarkMode />}
           </IconButton>
