@@ -20,7 +20,7 @@ function Solution() {
     <div
     id="solution"
       className={`flex ${
-        (phone === "phone" || phone === "tablet") && "flex-col px-5"
+        (phone === "phone" || phone === "tablet") && "flex-col-reverse px-5"
       } gap-20 items-center py-20 justify-center`}
     >
       <img

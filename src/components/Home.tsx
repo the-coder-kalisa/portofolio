@@ -22,7 +22,7 @@ const Home: FC = () => {
   }, [phone]);
   return (
     <div
-    id="home"
+      id="home"
       className={` ${
         phone === "tablet" || phone === "phone"
           ? "flex-col pt-[10rem] px-5"
@@ -44,8 +44,9 @@ const Home: FC = () => {
               !mode ? "text-[#000000b6]" : "text-white"
             } ${transition} `}
           >
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum
-            iste quibusdam ad rem laboriosam placeat quas
+            Professional Web, desktop and mobile developer with more than 3
+            years of experience. I am the owner of projects like levitra, transduite and
+            involved in projects like aquarens and others.
           </div>
         </div>
         <Button
