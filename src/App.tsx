@@ -33,15 +33,6 @@ function App() {
     },
     [phone]
   );
-  useEffect(
-    () => () => {
-     if(windowHeight === 0){
-      !location.href.includes("#home") && location.assign(location.href.concat("#home"))
-     }
-    },
-
-    []
-  );
   return (
     <div
       className={`${

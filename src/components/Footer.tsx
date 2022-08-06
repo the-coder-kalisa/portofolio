@@ -8,16 +8,13 @@ import { State, transition } from "../store";
 function Footer() {
   const { phone, mode } = useSelector<State, State>((state) => state);
   const [font, setFont] = useState<boolean>(true);
-  useEffect(
-    () => () => {
-      if (phone === "phone" || phone === "tablet") {
-        setFont(false);
-      } else {
-        setFont(true);
-      }
-    },
-    [phone]
-  );
+  useEffect(() => {
+    if(phone === "tablet" || phone === "phone"){
+      setFont(false);
+    }else{
+      setFont(true);
+    }
+  }, [phone]);
   const [drops, setDrops] = useState<number[]>([]);
   const drop = (index: number) => {
     let dro = drops.filter((drop) => drop !== index);
@@ -44,7 +41,7 @@ function Footer() {
           above services.
         </div>
       </div>
-      {!phone
+      {font
         ? FooterData.map(({ title, links }, index) => (
             <div key={index} className="flex flex-col gap-3">
               <h3 className="font-bold text-xl">{title}</h3>
@@ -61,11 +58,16 @@ function Footer() {
             <div
               key={index}
               style={{
-                height: drops.includes(index) ? (links.length+1) * 31 : "2rem",
+                height: drops.includes(index)
+                  ? (links.length + 1) * 31
+                  : "2rem",
               }}
               className={` duration-500 flex flex-col gap-5 overflow-hidden min-w-full`}
             >
-              <div onClick={() : void => drop(index)} className="font-bold cursor-pointer text-xl flex  w-full justify-between">
+              <div
+                onClick={(): void => drop(index)}
+                className="font-bold cursor-pointer text-xl flex  w-full justify-between"
+              >
                 <h1>{title}</h1>
                 <ChevronRight
                   style={
