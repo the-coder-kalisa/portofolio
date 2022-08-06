@@ -1,17 +1,25 @@
 import { Button } from "@mui/material";
 import React, { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
-import { knowledge } from "../data";
+import { categorie, knowledge } from "../data";
 import { State, transition } from "../store";
 import CV from "../images/desktop.png";
 const Services: React.FC = () => {
   const { mode, phone } = useSelector<State, State>((state) => state);
-  const [select, setSelected] = useState<number | undefined>(undefined);
+  const [desc, setDesc] = useState<Array<categorie>>();
   const [popup, setPopup] = useState<boolean>(false);
-  const showDesc: any = (categorie: Array<object | string>, index: number) => {
-    setPopup(true);
-    setSelected(index);
+  const [hoverd, setHoverd] = useState<number>();
+  const showDesc: any = (categorie: Array<categorie>, index: number) => {
+    setDesc(categorie);
+    setHoverd(index);
   };
+  useEffect(() => {
+    if(desc) {
+      setPopup(true)
+    }else{
+      setPopup(false)
+    }
+  }, [desc])
   const [font, setFont] = useState<boolean>(true);
   useEffect(() => {
     if (phone === "phone") {
@@ -23,7 +31,7 @@ const Services: React.FC = () => {
   return (
     <div
     id="services"
-      className={`${mode && "text-white"} flex  ${
+      className={`${mode && "text-white"} flex relative ${
         phone === "phone" || phone === "tablet"
           ? "flex-col-reverse px-5"
           : "items-center"
@@ -36,12 +44,12 @@ const Services: React.FC = () => {
       >
         {knowledge.map(({ type, categorie, desc, image }, index) => (
           <div
-            onClick={() => showDesc(categorie, index)}
-            className={`${
-              select === index && "bg-gradient-to-r from-[#f5c5be] via-[#febf83] to-[#d6aada]"
-            } hover:bg-gradient-to-r from-[#f5c5be] via-[#febf83] to-[#d6aada] p-3 rounded-xl`}
+            onMouseEnter={() => showDesc(categorie, index)}
+            onMouseLeave={() => showDesc(undefined)}
+            className={`hover:bg-gradient-to-r from-[#f5c5be] relative via-[#febf83] to-[#d6aada] p-3 rounded-xl`}
             key={index}
           >
+            {popup && hoverd === index &&  <div className="absolute bg-white right-0 text-black">hello</div>}
             <div
               className={`flex ${!font ? "flex-col items-start" : "items-center"} p-5 rounded-xl ${
                 mode ? "bg-[#091b2c]" : "bg-white"

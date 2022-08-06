@@ -10,7 +10,7 @@ import {
   Instagram,
   LinkedIn,
 } from "@mui/icons-material";
-interface categorie {
+export interface categorie {
   type?: string;
   languages?: Array<language | string>;
 }
