@@ -154,3 +154,8 @@ export const FooterData: Footer[] = [
     links: ["gthecoderkalisaineza@gmail.com", "+250785964206"],
   },
 ];
+interface Career{
+  name: string;
+  link?: string;
+}
+export const Career: Career[] = [{name: "Levitra", }]
