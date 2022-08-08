@@ -1,9 +1,8 @@
 import { FC, useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
 import { career } from "../data";
 import { State, transition } from "../store";
-
+import Code from "../images/Code.jpg";
 const Career: FC = () => {
   const { mode, phone } = useSelector<State, State>((state) => state);
   const [font, setFont] = useState<Boolean>(true);
@@ -18,13 +17,29 @@ const Career: FC = () => {
     [phone]
   );
   return (
-    <div className={`flex justify-between px-20 py-10 gap-4 ${(phone === "phone" || phone === "tablet") && "flex-col"}`}>
-      <div>
-        {career.map(({name, link}, index) => (
+    <div
+      className={`flex justify-between items-center px-20 py-10 gap-4 ${
+        (phone === "phone" || phone === "tablet") && "flex-col"
+      }`}
+    >
+      <div
+        className={`flex gap-2  ${
+          (phone === "phone" || phone === "tablet") && "flex-col"
+        }`}
+      >
+        <img src={Code} className="min-h-[10rem]" />
+        <div>
+          {career.map(({ name, link }, index) => (
             <div key={index}>
-                <a href={link ? link : "javascriptvoid(0)"}>{name}</a>
+              <a
+                href={link ? link : "javascriptvoid(0)"}
+                className="text-[#3131da]"
+              >
+                {name}
+              </a>
             </div>
-        ))}
+          ))}
+        </div>
       </div>
       <div className="max-w-[50rem] flex flex-col gap-10">
         <div
@@ -32,7 +47,9 @@ const Career: FC = () => {
             font ? "text-6xl" : "text-4xl"
           } flex flex-col gap-2 font-bold`}
         >
-          <div className="text-[#e9843f]">Here there <area shape="" coords="" href="" alt="" /></div>
+          <div className="text-[#e9843f]">
+            Here there <area shape="" coords="" href="" alt="" />
+          </div>
           <div>projects</div>
         </div>
         <div className={`flex flex-col gap-5`}>
