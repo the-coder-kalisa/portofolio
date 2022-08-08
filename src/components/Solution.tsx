@@ -31,7 +31,7 @@ function Solution() {
       <div className="max-w-[50rem] flex flex-col gap-10">
         <div
           className={`${
-            !font ? "text-6xl" : "text-4xl"
+            font ? "text-6xl" : "text-4xl"
           } flex flex-col gap-2 font-bold`}
         >
           <div className="text-[#e9843f]">Perfect solution</div>

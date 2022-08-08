@@ -49,41 +49,73 @@ const Services: React.FC = () => {
           <div
             style={{ marginTop: `${(hoverd! + 1) * 5}rem` }}
             onMouseEnter={() => setPopup(true)}
-            className={` z-50 min-w-[20rem] ${
-              (phone === "phone" || phone === "tablet") ? "" : "left-[47%]"
-            } rounded-md ${transition} absolute p-3  bg-gradient-to-r to-[#fdcdbe] via-[#febf83] from-[#d6aada]`}
+            className={`z-10 ${
+              phone === "phone" || phone === "tablet" ? "" : "left-[47%]"
+            } rounded-md ${transition} absolute  p-3 bg-gradient-to-r to-[#fdcdbe] via-[#febf83] from-[#d6aada]`}
           >
-            {(phone === "phone" || phone === "tablet") && <Close style={{height: 30, width: 30, color: mode ? "white" : "black"}} className="absolute top-2 right-5"/>}
+            {(phone === "phone" || phone === "tablet") && (
+              <Close
+                onClick={() => showDesc(undefined)}
+                style={{
+                  height: 30,
+                  width: 30,
+                  color: !mode ? "white" : "black",
+                  cursor: "pointer",
+                }}
+                className="absolute right-5 top-5"
+              />
+            )}
             <div
               className={`p-3 w-full h-full ${
                 mode ? `bg-white text-black` : "bg-black text-white"
               }`}
             >
               {desc?.map(({ type, languages }, index) => (
-                <div key={index} className="flex gap-2">
-                  <div className="font-extrabold text-lg">{type}:</div>
-                  <div className={`flex flex-col gap-2`}>
+                <div
+                  key={index}
+                  className={`flex ${phone === "phone" && "flex-col"} gap-2`}
+                >
+                  <div
+                    className={
+                      !(phone === "phone" || phone === "tablet")
+                        ? "font-extrabold text-lg"
+                        : "font-bold text-base"
+                    }
+                  >
+                    {type}:
+                  </div>
+                  <div
+                    className={`flex ${
+                      phone === "phone" && "pl-3"
+                    } pt-1 pb-3 flex-col gap-2`}
+                  >
                     {languages?.map(
                       ({ name, frameworksAndLibraries }, index) => (
-                        <div key={index} className="flex gap-2">
+                        <div key={index} className={`flex ${phone === "phone" ? "flex-col gap-1" : "gap-2"}`}>
                           <div
                             className={`max-w-[16rem] ${
                               frameworksAndLibraries
-                                ? "font-bold"
-                                : "font-medium"
+                                ? !(phone === "phone" || phone === "tablet")
+                                  ? "font-bold"
+                                  : "font-semibold"
+                                : phone === "phone" || phone === "tablet"
+                                ? "font-medium"
+                                : "font-normal"
                             }`}
                           >
                             {name} {frameworksAndLibraries && ":"}
                           </div>
-                          <div className="flex items-center">
+                          <div
+                          className={`flex ${phone === "phone" ? "flex-col pl-5" : "items-center"}`}
+                          >
                             {frameworksAndLibraries?.map(
                               (frameAndLibra, index) => (
                                 <div
-                                  className="font-medium flex gap-2 text-sm"
+                                  className={`${(phone === "phone" || phone === "tablet") ? "text-sm font-normal" : "text-sm font-medium"} flex gap-[2px]`}
                                   key={index}
                                 >
                                   <span>{frameAndLibra}</span>
-                                  <span className="pr-2">
+                                  <span className="pr-1">
                                     {index !==
                                       frameworksAndLibraries.length - 1 &&
                                     index !== frameworksAndLibraries.length - 2
@@ -107,9 +139,17 @@ const Services: React.FC = () => {
         )}
         {knowledge.map(({ type, categorie, desc, image }, index) => (
           <div
-            onMouseEnter={() =>  showDesc((phone === "phone" || phone === "tablet") ? undefined: categorie, index)}
-            onMouseLeave={() => showDesc(undefined)}
-            onClick={() => showDesc((phone === "phone" || phone === "tablet") ? categorie : undefined, index)}
+            onMouseEnter={() =>
+              !(phone === "phone" || phone === "tablet") &&
+              showDesc(categorie, index)
+            }
+            onMouseLeave={() =>
+              !(phone === "phone" || phone === "tablet") && showDesc(undefined)
+            }
+            onClick={() =>
+              (phone === "phone" || phone === "tablet") &&
+              showDesc(categorie, index)
+            }
             className={`hover:bg-gradient-to-r from-[#f5c5be] relative via-[#febf83] to-[#d6aada] p-3 rounded-xl`}
             key={index}
           >
@@ -148,7 +188,7 @@ const Services: React.FC = () => {
         </div>
         <div className="flex flex-col gap-3">
           <div>
-            This skills are really mine don't hesitate to invite me on your
+            These skills are really mine don't hesitate to invite me on your
             project, sothat we can put skills together to build a better world!
           </div>
 

@@ -31,7 +31,7 @@ function Footer() {
         <Link
           to="/"
           className={`${mode && "text-white"} ${transition} ${
-            font ? "text-xl " : "text-[1.3rem]"
+            !font ? "text-xl " : "text-[1.3rem]"
           } font-bold`}
         >
           Personal
