@@ -134,7 +134,16 @@ export const knowledge: Array<knowledge> = [
     categorie: [
       {
         type: "computer intensive programming",
-        languages: [{name: "C"}, {name: "C++"}, {name: "Matlab"}, {name: "C#"}, {name: "R"}, {name: "Python"}, {name: "Ruby"}, {name: "Rust"}],
+        languages: [
+          { name: "C" },
+          { name: "C++" },
+          { name: "Matlab" },
+          { name: "C#" },
+          { name: "R" },
+          { name: "Python" },
+          { name: "Ruby" },
+          { name: "Rust" },
+        ],
       },
     ],
   },
@@ -154,8 +163,12 @@ export const FooterData: Footer[] = [
     links: ["gthecoderkalisaineza@gmail.com", "+250785964206"],
   },
 ];
-interface Career{
+interface Career {
   name: string;
   link?: string;
 }
-export const Career: Career[] = [{name: "Levitra", }]
+export const career: Career[] = [
+  { name: "Levitra", link: "https://levitra.vercel.app" },
+  { name: "Transparent" },
+  { name: "Lamakuru" },
+];
