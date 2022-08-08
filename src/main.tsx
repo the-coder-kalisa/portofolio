@@ -21,9 +21,9 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
         /> */}
         <Route
           element={
-            <Provider store={store}>
+            // <Provider store={store}>
               <NotFound />
-            </Provider>
+            // </Provider>
           }
           path="*"
         />
