@@ -196,6 +196,7 @@ const Services: React.FC = () => {
             variant="contained"
             style={{ background: "#e9843f", maxWidth: 150 }}
             href={CV}
+            target="_blank"
             download
           >
             Download CV
