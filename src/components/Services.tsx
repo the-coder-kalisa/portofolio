@@ -67,7 +67,7 @@ const Services: React.FC = () => {
             )}
             <div
               className={`p-3 w-full h-full ${
-                mode ? `bg-white text-black` : "bg-black text-white"
+                mode ? `bg-white text-black` : "bg-[#000000b4] text-white"
               }`}
             >
               {desc?.map(({ type, languages }, index) => (

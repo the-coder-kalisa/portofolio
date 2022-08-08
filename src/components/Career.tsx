@@ -6,41 +6,21 @@ import Code from "../images/Code.jpg";
 const Career: FC = () => {
   const { mode, phone } = useSelector<State, State>((state) => state);
   const [font, setFont] = useState<Boolean>(true);
-  useEffect(
-    () => () => {
-      if (phone === "phone" || phone === "tablet") {
-        setFont(false);
-      } else {
-        setFont(true);
-      }
-    },
-    [phone]
-  );
+  useEffect(() => {
+    if (phone === "phone" || phone === "tablet") {
+      setFont(false);
+    } else {
+      setFont(true);
+    }
+  }, [phone]);
   return (
     <div
       className={`flex justify-between items-center px-20 py-10 gap-4 ${
-        (phone === "phone" || phone === "tablet") && "flex-col"
+        (phone === "phone" || phone === "tablet") &&
+        "flex-col-reverse justify-start"
       }`}
     >
-      <div
-        className={`flex gap-2  ${
-          (phone === "phone" || phone === "tablet") && "flex-col"
-        }`}
-      >
-        <img src={Code} className="min-h-[10rem]" />
-        <div>
-          {career.map(({ name, link }, index) => (
-            <div key={index}>
-              <a
-                href={link ? link : "javascriptvoid(0)"}
-                className="text-[#3131da]"
-              >
-                {name}
-              </a>
-            </div>
-          ))}
-        </div>
-      </div>
+      <img src={Code} className="min-w-[40rem]" />
       <div className="max-w-[50rem] flex flex-col gap-10">
         <div
           className={`${
@@ -52,7 +32,14 @@ const Career: FC = () => {
           </div>
           <div>projects</div>
         </div>
-        <div className={`flex flex-col gap-5`}>
+        <div className={``}>
+            <div className={`flex flex-col p-2 gap-2 ${mode ? "bg-white text-black" : "bg-[#000000bd] text-white"}`}>
+                {career.map(({name, link}, index) => (
+                    <a href={link ? link : "javascript:void(0)"} className="hover:text-blue-600" key={index}>
+{name}
+                    </a>
+                ))}
+            </div>
           <div
             className={`${mode ? "text-white" : "text-black"} ${transition}`}
           >

@@ -7,8 +7,8 @@ function Solution() {
   const { mode, phone } = useSelector<State, State>((state) => state);
   const [font, setFont] = useState<boolean>(true);
   useEffect(
-    () => () => {
-      if (phone === "phone") {
+     () => {
+      if (phone === "phone" || phone === "tablet") {
         setFont(false);
       } else {
         setFont(true);
