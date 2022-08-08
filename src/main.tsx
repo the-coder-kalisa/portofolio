@@ -11,7 +11,22 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <Router>
       <Routes>
-        <Route path="/" element={<div>hello</div>}></Route>
+        {/* <Route
+          element={
+            <Provider store={store}>
+              <App />
+            </Provider>
+          }
+          path="/"
+        /> */}
+        <Route
+          element={
+            <Provider store={store}>
+              <NotFound />
+            </Provider>
+          }
+          path="*"
+        />
       </Routes>
     </Router>
   </React.StrictMode>
