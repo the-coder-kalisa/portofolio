@@ -19,14 +19,6 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
           }
           path="/"
         />
-        <Route
-          element={
-            <Provider store={store}>
-              <NotFound />
-            </Provider>
-          }
-          path="*"
-        />
       </Routes>
     </Router>
   </React.StrictMode>
