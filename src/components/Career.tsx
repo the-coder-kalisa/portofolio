@@ -33,13 +33,21 @@ const Career: FC = () => {
           <div>projects</div>
         </div>
         <div className={``}>
-            <div className={`flex flex-col p-2 gap-2 ${mode ? "bg-white text-black" : "bg-[#000000bd] text-white"}`}>
-                {career.map(({name, link}, index) => (
-                    <a href={link ? link : "javascript:void(0)"} className="hover:text-blue-600" key={index}>
-{name}
-                    </a>
-                ))}
-            </div>
+          <div
+            className={`flex flex-col p-2 gap-2 ${
+              mode ? "bg-white text-black" : "bg-[#000000bd] text-white"
+            }`}
+          >
+            {career.map(({ name, link }, index) => (
+              <a
+                href={link ? link : "javascript:void(0)"}
+                className="hover:text-blue-600"
+                key={index}
+              >
+                {name}
+              </a>
+            ))}
+          </div>
           <div
             className={`${mode ? "text-white" : "text-black"} ${transition}`}
           >

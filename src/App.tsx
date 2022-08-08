@@ -44,7 +44,7 @@ function App() {
     >
       <Navigation />
       <Home />
-      <Services />
+      {/* <Services /> */}
       <Solution />
       <Career />
       <Footer />
