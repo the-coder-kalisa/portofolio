@@ -42,13 +42,12 @@ function App() {
         mode ? "bg-[#091b2c] text-white" : "bg-[white] text-black"
       } ${transition} ${font ? "text-lg" : "text-sm"}`}
     >
-      el
-      {/* <Navigation /> */}
-      {/* <Home /> */}
-      {/* <Services /> */}
-      {/* <Solution /> */}
-      {/* <Career /> */}
-      {/* <Footer /> */}
+      <Navigation />
+      <Home />
+      <Services />
+      <Solution />
+      <Career />
+      <Footer />
     </div>
   );
 }
