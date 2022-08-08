@@ -2,7 +2,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { actions, State, transition } from "./store";
 import { Home, Navigation, Services, Solution, Footer } from "./components";
 import { useEffect, useState } from "react";
-import { Router } from "react-router-dom";
 import Career from "./components/Career";
 function App() {
   const { mode, phone } = useSelector<State, State>(
