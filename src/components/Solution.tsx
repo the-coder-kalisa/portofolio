@@ -41,14 +41,11 @@ function Solution() {
           <div
             className={`${mode ? "text-white" : "text-black"} ${transition}`}
           >
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maxime
-            assumenda animi dolores saepe necessitatibus veniam ad vero
-            doloremque delectus tempore sit voluptatibus laborum iste ipsum,
-            ratione blanditiis voluptates qui ab?
+            Don't hesistate to invite me to your business because I'm perfect
+            solution to your good business. Many business that I've helped are
+            still congulating me for my work. What are you waiting for?
           </div>
-          <Button variant="contained" className="max-w-[7rem]">
-            Details
-          </Button>
+          
         </div>
       </div>
     </div>

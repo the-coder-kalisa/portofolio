@@ -166,8 +166,8 @@ const Services: React.FC = () => {
                 className={`w-[10rem] h-[10rem] rounded-full`}
               />
               <div className="flex flex-col gap-1">
-                <h1 className="text-xl font-bold">{type}</h1>
-                <div className=" text-xs max-h-20 overflow-hidden overflow-ellipsis">
+                <h1 className={!(phone === "phone" || phone === "tablet") ? `text-xl font-bold` : "text-lg font-semibold"}>{type}</h1>
+                <div className={`${!(phone === "phone" || phone === "tablet") ? "text-sm" : "text-xs"} max-w-[40rem] overflow-hidden overflow-ellipsis`}>
                   {desc}
                 </div>
               </div>
