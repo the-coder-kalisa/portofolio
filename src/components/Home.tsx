@@ -8,9 +8,7 @@ import Google from "./Google";
 import Twitter from "./Twitter";
 import gif from "../images/gif.png";
 const Home: FC = () => {
-  const { mode, phone, windowHeight } = useSelector<State, State>(
-    (state) => state
-  );
+  const { mode, phone } = useSelector<State, State>((state) => state);
   const allcircle: string = "w-[22rem] h-[22rem] relative rounded-full";
   const [font, setFont] = useState<boolean>(true);
   useEffect(() => {

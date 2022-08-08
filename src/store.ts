@@ -5,18 +5,14 @@ import {
 } from "@reduxjs/toolkit";
 export interface State {
   mode: boolean;
-  windowHeight: number;
   phone: string;
 }
 const sitedata = createSlice<State, SliceCaseReducers<State>>({
   name: "mode",
-  initialState: { mode: true, windowHeight: 0, phone: "desktop" },
+  initialState: { mode: true,  phone: "desktop" },
   reducers: {
     changeMode(state, action) {
       state.mode = action.payload;
-    },
-    changeHeight(state, action) {
-      state.windowHeight = action.payload;
     },
     changePhone(state, action) {
       state.phone = action.payload;

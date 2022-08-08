@@ -19,7 +19,7 @@ const Navigation: React.FC = () => {
   const [droped, setDroped] = useState<boolean>(false);
   const [font, setFont] = useState<boolean>(true);
   useEffect(
-    () => () => {
+    () => {
       if (phone === "tablet" || phone === "phone") {
         setFont(false);
       } else {
