@@ -13,9 +13,6 @@ const Navigation: React.FC = () => {
   const changeMode = () => {
     dispatch(actions.changeMode(!mode));
   };
-  window.addEventListener("scroll", () => {
-    dispatch(actions.changeHeight(scrollY));
-  });
   const [droped, setDroped] = useState<boolean>(false);
   const [font, setFont] = useState<boolean>(true);
   useEffect(
