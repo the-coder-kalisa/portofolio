@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import { categorie, knowledge } from "../data";
 import { State, transition } from "../store";
 import CV from "../images/desktop.png";
+import { Close } from "@mui/icons-material";
 const Services: React.FC = () => {
   const { mode, phone } = useSelector<State, State>((state) => state);
   const [desc, setDesc] = useState<Array<categorie>>();
@@ -22,7 +23,7 @@ const Services: React.FC = () => {
   }, [desc]);
   const [font, setFont] = useState<boolean>(true);
   useEffect(() => {
-    if (phone === "phone") {
+    if (phone === "phone" || phone === "tablet") {
       setFont(false);
     } else {
       setFont(true);
@@ -48,12 +49,13 @@ const Services: React.FC = () => {
           <div
             style={{ marginTop: `${(hoverd! + 1) * 5}rem` }}
             onMouseEnter={() => setPopup(true)}
-            className={` z-50 min-w-[20rem] rounded-md ${transition} ${
-              phone === "phone" && "min-w-full"
-            } absolute p-3 left-[47%] bg-gradient-to-r to-[#fdcdbe] via-[#febf83] from-[#d6aada]`}
+            className={` z-50 min-w-[20rem] ${
+              (phone === "phone" || phone === "tablet") ? "" : "left-[47%]"
+            } rounded-md ${transition} absolute p-3  bg-gradient-to-r to-[#fdcdbe] via-[#febf83] from-[#d6aada]`}
           >
+            {(phone === "phone" || phone === "tablet") && <Close style={{height: 30, width: 30, color: mode ? "white" : "black"}} className="absolute top-2 right-5"/>}
             <div
-              className={`p-3 ${
+              className={`p-3 w-full h-full ${
                 mode ? `bg-white text-black` : "bg-black text-white"
               }`}
             >
@@ -64,7 +66,13 @@ const Services: React.FC = () => {
                     {languages?.map(
                       ({ name, frameworksAndLibraries }, index) => (
                         <div key={index} className="flex gap-2">
-                          <div className={`max-w-[16rem] ${frameworksAndLibraries ?  "font-bold" : "font-medium"}`}>
+                          <div
+                            className={`max-w-[16rem] ${
+                              frameworksAndLibraries
+                                ? "font-bold"
+                                : "font-medium"
+                            }`}
+                          >
                             {name} {frameworksAndLibraries && ":"}
                           </div>
                           <div className="flex items-center">
@@ -99,8 +107,9 @@ const Services: React.FC = () => {
         )}
         {knowledge.map(({ type, categorie, desc, image }, index) => (
           <div
-            onMouseEnter={() => showDesc(categorie, index)}
+            onMouseEnter={() =>  showDesc((phone === "phone" || phone === "tablet") ? undefined: categorie, index)}
             onMouseLeave={() => showDesc(undefined)}
+            onClick={() => showDesc((phone === "phone" || phone === "tablet") ? categorie : undefined, index)}
             className={`hover:bg-gradient-to-r from-[#f5c5be] relative via-[#febf83] to-[#d6aada] p-3 rounded-xl`}
             key={index}
           >
