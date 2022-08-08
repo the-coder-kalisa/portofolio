@@ -3,16 +3,9 @@ import Phone from "./images/s.jpg";
 import Data from "./images/d.jpg";
 import desk from "./images/l.jpg";
 import ai from "./images/a.jpg";
-import {
-  Email,
-  Facebook,
-  GitHub,
-  Instagram,
-  LinkedIn,
-} from "@mui/icons-material";
 export interface categorie {
   type?: string;
-  languages?: Array<language | string>;
+  languages?: Array<language>;
 }
 interface language {
   name: string;
@@ -140,7 +133,8 @@ export const knowledge: Array<knowledge> = [
     desc: "I have some brilliant skills in alogarithm, machine learning, artifical intelligence and embedded programminng",
     categorie: [
       {
-        languages: ["C", "C++", "Matlab", "C#", "R", "Python", "Ruby", "Rust"],
+        type: "computer intensive programming",
+        languages: [{name: "C"}, {name: "C++"}, {name: "Matlab"}, {name: "C#"}, {name: "R"}, {name: "Python"}, {name: "Ruby"}, {name: "Rust"}],
       },
     ],
   },

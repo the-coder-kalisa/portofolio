@@ -38,10 +38,65 @@ const Services: React.FC = () => {
       } gap-32 py-10 justify-center ${transition}`}
     >
       <div
-        className={`max-h-[30rem] ${font && "max-w-[40rem]"} rounded-xl ${
+        className={` ${
+          font && "max-w-[40rem]"
+        } max-h-[50rem] overflow-y-scroll rounded-xl ${
           mode ? "bg-[#19305c]" : "bg-[#e7f7fb] "
-        } ${transition} p-3 flex  flex-col gap-5 overflow-scroll`}
+        } ${transition} p-3 flex  flex-col gap-5`}
       >
+        {popup && (
+          <div
+            style={{ marginTop: `${(hoverd! + 1) * 5}rem` }}
+            onMouseEnter={() => setPopup(true)}
+            className={` z-50 min-w-[20rem] rounded-md ${transition} ${
+              phone === "phone" && "min-w-full"
+            } absolute p-3 left-[47%] bg-gradient-to-r to-[#fdcdbe] via-[#febf83] from-[#d6aada]`}
+          >
+            <div
+              className={`p-3 ${
+                mode ? `bg-white text-black` : "bg-black text-white"
+              }`}
+            >
+              {desc?.map(({ type, languages }, index) => (
+                <div key={index} className="flex gap-2">
+                  <div className="font-extrabold text-lg">{type}:</div>
+                  <div className={`flex flex-col gap-2`}>
+                    {languages?.map(
+                      ({ name, frameworksAndLibraries }, index) => (
+                        <div key={index} className="flex gap-2">
+                          <div className={`max-w-[16rem] ${frameworksAndLibraries ?  "font-bold" : "font-medium"}`}>
+                            {name} {frameworksAndLibraries && ":"}
+                          </div>
+                          <div className="flex items-center">
+                            {frameworksAndLibraries?.map(
+                              (frameAndLibra, index) => (
+                                <div
+                                  className="font-medium flex gap-2 text-sm"
+                                  key={index}
+                                >
+                                  <span>{frameAndLibra}</span>
+                                  <span className="pr-2">
+                                    {index !==
+                                      frameworksAndLibraries.length - 1 &&
+                                    index !== frameworksAndLibraries.length - 2
+                                      ? ","
+                                      : index ===
+                                          frameworksAndLibraries.length - 2 &&
+                                        "and"}
+                                  </span>
+                                </div>
+                              )
+                            )}
+                          </div>
+                        </div>
+                      )
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
         {knowledge.map(({ type, categorie, desc, image }, index) => (
           <div
             onMouseEnter={() => showDesc(categorie, index)}
@@ -49,9 +104,6 @@ const Services: React.FC = () => {
             className={`hover:bg-gradient-to-r from-[#f5c5be] relative via-[#febf83] to-[#d6aada] p-3 rounded-xl`}
             key={index}
           >
-            {popup && hoverd === index && (
-              <div className="absolute bg-white right-0 text-black">hello</div>
-            )}
             <div
               className={`flex ${
                 !font ? "flex-col items-start" : "items-center"
@@ -87,11 +139,8 @@ const Services: React.FC = () => {
         </div>
         <div className="flex flex-col gap-3">
           <div>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque
-            reprehenderit dolorem voluptatem doloremque excepturi accusamus,
-            reiciendis non tempore assumenda mollitia perferendis dolore
-            voluptatibus architecto totam corporis autem alias. Consectetur,
-            voluptatibus.
+            This skills are really mine don't hesitate to invite me on your
+            project, sothat we can put skills together to build a better world!
           </div>
 
           <Button
