@@ -1,5 +1,5 @@
-import { useDispatch, useSelector } from "react-redux";
-import { actions, State, transition } from "./store";
+import { Provider, useDispatch, useSelector } from "react-redux";
+import store, { actions, State, transition } from "./store";
 import { Home, Navigation, Services, Solution, Footer } from "./components";
 import { useEffect, useState } from "react";
 import Career from "./components/Career";
@@ -31,18 +31,20 @@ function App() {
     }
   }, [phone]);
   return (
-    <div
-      className={`${
-        mode ? "bg-[#091b2c] text-white" : "bg-[white] text-black"
-      } ${transition} ${font ? "text-lg" : "text-sm"}`}
-    >
-      <Navigation />
-      <Home />
-      <Services />
-      <Solution />
-      <Career />
-      <Footer />
-    </div>
+    <Provider store={store}>
+      <div
+        className={`${
+          mode ? "bg-[#091b2c] text-white" : "bg-[white] text-black"
+        } ${transition} ${font ? "text-lg" : "text-sm"}`}
+      >
+        <Navigation />
+        <Home />
+        <Services />
+        <Solution />
+        <Career />
+        <Footer />
+      </div>
+    </Provider>
   );
 }
 
