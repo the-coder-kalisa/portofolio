@@ -109,10 +109,10 @@ const Navigation: React.FC = () => {
             {mode ? (
               <LightMode
                 style={{ color: "white" }}
-                sx={{ height: 20, width: 20 }}
+                sx={{ height: 15, width: 15 }}
               />
             ) : (
-              <DarkMode sx={{ height: 20, width: 20 }} />
+              <DarkMode sx={{ height: 15, width: 15 }} />
             )}
           </IconButton>
         </div>
