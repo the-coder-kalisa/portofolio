@@ -46,11 +46,17 @@ function Footer() {
             <div key={index} className="flex flex-col gap-3">
               <h3 className="font-bold text-xl">{title}</h3>
               <div className="flex flex-col gap-2">
-                {links.map((link, index) => (
-                  <Link to={link} key={index}>
-                    {link}
-                  </Link>
-                ))}
+                {links.map(({ type, name, link }, index) =>
+                  type ? (
+                    <Link key={index} to={`#${name.toLowerCase()}`}>
+                      {name}
+                    </Link>
+                  ) : (
+                    <a key={index} href={link}>
+                      {name}
+                    </a>
+                  )
+                )}
               </div>
             </div>
           ))
@@ -89,11 +95,17 @@ function Footer() {
                 />
               </div>
               <div className="flex flex-col gap-2">
-                {links.map((link, index) => (
-                  <Link to={link} className="text-[1rem]" key={index}>
-                    {link}
-                  </Link>
-                ))}
+                {links.map(({ type, link, name }, index) =>
+                  type ? (
+                    <Link key={index} to={`#${name.toLowerCase()}`}>
+                      {name}
+                    </Link>
+                  ) : (
+                    <a key={index} href={link}>
+                      {name}
+                    </a>
+                  )
+                )}
               </div>
             </div>
           ))}

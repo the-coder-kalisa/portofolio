@@ -148,19 +148,52 @@ export const knowledge: Array<knowledge> = [
     ],
   },
 ];
+type Link = { name: string; link?: string; type: boolean };
 interface Footer {
   title: string;
-  links: string[];
+  links: Link[];
 }
 export const FooterData: Footer[] = [
-  { title: "Explore", links: ["Home", "Services", "Solution", "Aboutus"] },
+  {
+    title: "Explore",
+    links: [
+      { name: "Home", type: true },
+      { name: "Services", type: true },
+      { name: "Solution", type: true },
+      { name: "Aboutus", type: true },
+    ],
+  },
   {
     title: "Follow",
-    links: ["Facebook", "Instagram", "LinkedIn", "Github"],
+    links: [
+      {
+        name: "Facebook",
+        link: "https://web.facebook.com/nikalisa.45?_rdc=1&_rdr",
+        type: false,
+      },
+      {
+        name: "Instagram",
+        link: "https://www.instagram.com/ni_kalisa/",
+        type: false,
+      },
+      {
+        name: "LinkedIn",
+        link: "https://www.linkedin.com/in/kalisa-ineza-giovanni-63a406231/",
+        type: false,
+      },
+      {
+        name: "Github",
+        link: "https://github.com/the-coder-kalisa",
+        type: false,
+      },
+    ],
   },
   {
     title: "New Business",
-    links: ["gthecoderkalisaineza@gmail.com", "+250785964206"],
+    links: [
+      { name: "gthecoderkalisaineza@gmail.com", type: false },
+      { name: "+250785964206", type: false },
+    ],
   },
 ];
 interface Career {
