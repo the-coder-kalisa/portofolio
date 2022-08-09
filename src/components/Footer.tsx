@@ -19,12 +19,12 @@ function Footer() {
     <div
       id="aboutus"
       className={`text-white py-5 flex justify-between ${
-        phone !== "phone" && "px-12"
+        phone !== "phone" ? "px-12" : "px-1"
       } ${mode ? "bg-transparent" : "bg-[#091b2c]"} ${transition} ${
         !font ? "flex-col gap-5" : "gap-10"
       }`}
     >
-      <div className="flex flex-col gap-3">
+      <div className="flex flex-col  gap-3">
         <Link
           to="/"
           className={`${mode && "text-white"} ${transition} ${
@@ -62,10 +62,10 @@ function Footer() {
               key={index}
               style={{
                 height: drops.includes(index)
-                  ? (links.length + 1) * 35
+                  ? (links.length + 1) * 31.5
                   : "2rem",
               overflow: "hidden"}}
-              className={` duration-500 flex flex-col gap-5 w-full`}
+              className={` duration-500 flex flex-col w-full`}
             >
               <div
                 onClick={(): void => drop(index)}
@@ -91,7 +91,7 @@ function Footer() {
                   }
                 />
               </div>
-              <div className="flex flex-col h-full pt-5 gap-2">
+              <div className="flex flex-col h-full text-base pt-3 gap-2">
                 {links.map(({ type, link, name }, index) =>
                   type ? (
                     <Link key={index} to={`#${name.toLowerCase()}`}>
