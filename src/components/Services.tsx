@@ -6,6 +6,7 @@ import CV from "../images/KALISA INEZA Giovanni CV.png";
 import { Close } from "@mui/icons-material";
 import { useRecoilValue } from "recoil";
 import { fonts, modes, phones } from "../atom";
+import { Fade } from "react-reveal";
 const Services: React.FC = () => {
   const mode = useRecoilValue(modes);
   const phone = useRecoilValue(phones);
@@ -33,10 +34,11 @@ const Services: React.FC = () => {
           : "items-center"
       } gap-32 py-10 justify-center ${transition}`}
     >
-      <div
+     <Fade left>
+     <div
         className={` ${
           font && "max-w-[40rem]"
-        } max-h-[50rem] overflow-y-scroll rounded-xl ${
+        } max-h-[40rem] overflow-y-scroll rounded-xl ${
           mode ? "bg-[#19305c]" : "bg-[#e7f7fb] "
         } ${transition} p-3 flex  flex-col gap-5`}
       >
@@ -197,34 +199,39 @@ const Services: React.FC = () => {
           </div>
         ))}
       </div>
-      <div className="max-w-[40rem] flex flex-col gap-3">
-        <div className={`${!font ? "text-4xl" : "text-7xl"} font-bold`}>
-          <div
-            className={`${
-              mode ? "text-[white]" : "text-[#19305c]"
-            } ${transition}`}
-          >
-            My awesome
-          </div>
-          <div className="text-[#e9843f]">services</div>
-        </div>
-        <div className="flex flex-col gap-3">
-          <div>
-            These skills are really mine don't hesitate to invite me on your
-            project, sothat we can put skills together to build a better world!
-          </div>
 
-          <Button
-            variant="contained"
-            style={{ background: "#e9843f", maxWidth: 150 }}
-            href={CV}
-            target="_blank"
-            download
-          >
-            Download CV
-          </Button>
+     </Fade>
+      <Fade right>
+        <div className="max-w-[40rem] flex flex-col gap-3">
+          <div className={`${!font ? "text-4xl" : "text-7xl"} font-bold`}>
+            <div
+              className={`${
+                mode ? "text-[white]" : "text-[#19305c]"
+              } ${transition}`}
+            >
+              My awesome
+            </div>
+            <div className="text-[#e9843f]">services</div>
+          </div>
+          <div className="flex flex-col gap-3">
+            <div>
+              These skills are really mine don't hesitate to invite me on your
+              project, sothat we can put skills together to build a better
+              world!
+            </div>
+
+            <Button
+              variant="contained"
+              style={{ background: "#e9843f", maxWidth: 150 }}
+              href={CV}
+              target="_blank"
+              download
+            >
+              Download CV
+            </Button>
+          </div>
         </div>
-      </div>
+      </Fade>
     </div>
   );
 };
