@@ -35,11 +35,11 @@ function App() {
       } ${transition} ${font ? "text-lg" : "text-sm"}`}
     >
       {/* <Navigation /> */}
-      {/* <Home /> */ }
-      <Services /> 
-    <Solution /> 
-      <Career /> 
-      <Footer /> 
+      <Home />
+      <Services />
+      <Solution />
+      <Career />
+      <Footer />
     </div>
   );
 }
