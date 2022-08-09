@@ -34,7 +34,7 @@ function App() {
         mode ? "bg-[#091b2c] text-white" : "bg-[white] text-black"
       } ${transition} ${font ? "text-lg" : "text-sm"}`}
     >
-      {/* <Navigation /> */}
+      <Navigation />
       <Home />
       <Services />
       <Solution />
