@@ -5,8 +5,11 @@ import { categorie, knowledge } from "../data";
 import { State, transition } from "../store";
 import CV from "../images/desktop.png";
 import { Close } from "@mui/icons-material";
+import { useRecoilValue } from "recoil";
+import { fonts, modes, phones } from "../atom";
 const Services: React.FC = () => {
-  const { mode, phone } = useSelector<State, State>((state) => state);
+const mode = useRecoilValue(modes);
+const phone = useRecoilValue(phones)
   const [desc, setDesc] = useState<Array<categorie>>();
   const [popup, setPopup] = useState<boolean>(false);
   const [hoverd, setHoverd] = useState<number>();
@@ -21,14 +24,7 @@ const Services: React.FC = () => {
       setPopup(false);
     }
   }, [desc]);
-  const [font, setFont] = useState<boolean>(true);
-  useEffect(() => {
-    if (phone === "phone" || phone === "tablet") {
-      setFont(false);
-    } else {
-      setFont(true);
-    }
-  }, [phone]);
+  const font = useRecoilValue(fonts);
   return (
     <div
       id="services"

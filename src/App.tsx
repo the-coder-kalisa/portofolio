@@ -1,40 +1,28 @@
-import { useDispatch, useSelector } from "react-redux";
-import { actions, State, transition } from "./store";
-import { Home, Navigation, Services, Solution, Footer } from "./components";
-import { useEffect, useState } from "react";
-import Career from "./components/Career";
+import { transition } from "./store";
+import { Home, Navigation, Services, Solution, Footer, Career } from "./components";
+import { useEffect } from "react";
+import { useRecoilValue, useSetRecoilState } from "recoil";
+import { fonts, modes, phones } from "./atom";
 function App() {
-  const { mode, phone } = useSelector<State, State>(
-    (state) => state
-  );
-  const dispacth = useDispatch();
+  const setPhone = useSetRecoilState(phones);
+  const mode = useRecoilValue(modes);
   useEffect(() => {
     window.addEventListener("resize", () => {
       window.innerWidth <= 1110
         ? window.innerWidth <= 800
-          ? dispacth(actions.changePhone("phone"))
-          : dispacth(actions.changePhone("tablet"))
-        : dispacth(actions.changePhone("destkop"));
+          ? setPhone("phone")
+          : setPhone("tablet")
+        : setPhone("desktop");
     });
   });
   useEffect(() => {
     window.innerWidth <= 1110
       ? window.innerWidth <= 800
-        ? dispacth(actions.changePhone("phone"))
-        : dispacth(actions.changePhone("tablet"))
-      : dispacth(actions.changePhone(false));
+        ? setPhone("phone")
+        : setPhone("tablet")
+      : setPhone("desktop");
   }, []);
-  const [font, setFont] = useState<boolean>(true);
-  useEffect(
-    () => () => {
-      if (phone === "phone" || phone === "tablet") {
-        setFont(false);
-      } else {
-        setFont(true);
-      }
-    },
-    [phone]
-  );
+  const font = useRecoilValue(fonts);
   return (
     <div
       className={`${

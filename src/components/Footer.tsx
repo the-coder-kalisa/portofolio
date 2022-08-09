@@ -3,18 +3,14 @@ import { Button } from "@mui/material";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { useRecoilState, useRecoilValue } from "recoil";
+import { fonts, modes, phones } from "../atom";
 import { FooterData } from "../data";
 import { State, transition } from "../store";
 function Footer() {
-  const { phone, mode } = useSelector<State, State>((state) => state);
-  const [font, setFont] = useState<boolean>(true);
-  useEffect(() => {
-    if (phone === "tablet" || phone === "phone") {
-      setFont(false);
-    } else {
-      setFont(true);
-    }
-  }, [phone]);
+const phone = useRecoilValue(phones);
+const mode = useRecoilValue(modes);
+const font = useRecoilValue(fonts);
   const [drops, setDrops] = useState<number[]>([]);
   const drop = (index: number) => {
     let dro = drops.filter((drop) => drop !== index);
@@ -65,7 +61,7 @@ function Footer() {
               key={index}
               style={{
                 height: drops.includes(index)
-                  ? (links.length + 1) * 31
+                  ? (links.length + 1) * 40
                   : "2rem",
               }}
               className={` duration-500 flex flex-col gap-5 overflow-hidden min-w-full`}

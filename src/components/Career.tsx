@@ -3,16 +3,12 @@ import { useSelector } from "react-redux";
 import { career } from "../data";
 import { State, transition } from "../store";
 import Code from "../images/Code.jpg";
+import { useRecoilValue } from "recoil";
+import { fonts, modes, phones } from "../atom";
 const Career: FC = () => {
-  const { mode, phone } = useSelector<State, State>((state) => state);
-  const [font, setFont] = useState<Boolean>(true);
-  useEffect(() => {
-    if (phone === "phone" || phone === "tablet") {
-      setFont(false);
-    } else {
-      setFont(true);
-    }
-  }, [phone]);
+const mode = useRecoilValue(modes);
+const phone = useRecoilValue(phones);
+const font = useRecoilValue(fonts);
   return (
     <div
       className={`flex justify-between items-center px-20 py-10 gap-4 ${

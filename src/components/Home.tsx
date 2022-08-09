@@ -7,17 +7,13 @@ import Facebook from "./Facebook";
 import Google from "./Google";
 import Twitter from "./Twitter";
 import gif from "../images/gif.png";
+import { useRecoilValue } from "recoil";
+import { fonts, modes, phones } from "../atom";
 const Home: FC = () => {
-  const { mode, phone } = useSelector<State, State>((state) => state);
+  const mode = useRecoilValue(modes);
+  const phone = useRecoilValue(phones);
   const allcircle: string = "w-[22rem] h-[22rem] relative rounded-full";
-  const [font, setFont] = useState<boolean>(true);
-  useEffect(() => {
-    if (phone === "phone") {
-      setFont(false);
-    } else {
-      setFont(true);
-    }
-  }, [phone]);
+  const font = useRecoilValue(fonts);
   return (
     <div
       id="home"

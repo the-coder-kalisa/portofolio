@@ -5,26 +5,19 @@ import { BsList } from "react-icons/bs";
 import { useDispatch, useSelector } from "react-redux";
 import { actions, State, transition } from "../store";
 import { DarkMode, LightMode } from "@mui/icons-material";
+import { useRecoilState, useRecoilValue } from "recoil";
+import { fonts, modes, phones } from "../atom";
 
 const Navigation: React.FC = () => {
-  const dispatch = useDispatch();
-  const { mode, phone } = useSelector<State, State>((state) => state);
+  const [mode, setMode] = useRecoilState(modes);
   const buttons: string[] = ["Home", "Services", "solution", "About Us"];
   const changeMode = () => {
-    dispatch(actions.changeMode(!mode));
+    setMode(!mode);
   };
+
   const [droped, setDroped] = useState<boolean>(false);
-  const [font, setFont] = useState<boolean>(true);
-  useEffect(
-    () => {
-      if (phone === "tablet" || phone === "phone") {
-        setFont(false);
-      } else {
-        setFont(true);
-      }
-    },
-    [phone]
-  );
+  const font = useRecoilValue(fonts);
+  const phone = useRecoilValue(phones);
   return (
     <div
       className={`flex items-center fixed z-50 w-full ${transition} ${

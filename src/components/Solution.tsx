@@ -1,21 +1,14 @@
 import { Button } from "@mui/material";
 import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
+import { useRecoilValue } from "recoil";
+import { fonts, modes, phones } from "../atom";
 import business from "../images/business.jpg";
 import { State, transition } from "../store";
 function Solution() {
-  const { mode, phone } = useSelector<State, State>((state) => state);
-  const [font, setFont] = useState<boolean>(true);
-  useEffect(
-     () => {
-      if (phone === "phone" || phone === "tablet") {
-        setFont(false);
-      } else {
-        setFont(true);
-      }
-    },
-    [phone]
-  );
+const mode = useRecoilValue(modes);
+const phone = useRecoilValue(phones);
+const font = useRecoilValue(fonts);
   return (
     <div
       id="solution"
