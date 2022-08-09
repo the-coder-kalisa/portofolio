@@ -24,18 +24,7 @@ function App() {
   }, []);
   const font = useRecoilValue(fonts);
   return (
-    <div
-      className={`${
-        mode ? "bg-[#091b2c] text-white" : "bg-[white] text-black"
-      } ${transition} ${font ? "text-lg" : "text-sm"}`}
-    >
-      <Navigation />
-      <Home />
-      <Services />
-      <Solution />
-      <Career />
-      <Footer />
-    </div>
+   <div>hello</div>
   );
 }
 

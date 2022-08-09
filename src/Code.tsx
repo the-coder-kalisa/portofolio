@@ -5,9 +5,7 @@ import App from "./App";
 const Code : FC = () => {
     return(
         <RecoilRoot>
-           <div>
-            hello
-           </div>
+          <App />
         </RecoilRoot>
     )
 }
