@@ -13,7 +13,7 @@ const font = useRecoilValue(fonts);
     <div
       className={`flex justify-between items-center px-32 py-10 gap-4 ${
         (phone === "phone" || phone === "tablet") &&
-        "flex-col-reverse justify-start"
+        "flex-col justify-start"
       }`}
     >
       <img src={Code} className="min-w-[40rem]" />

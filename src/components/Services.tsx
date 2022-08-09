@@ -30,7 +30,7 @@ const phone = useRecoilValue(phones)
       id="services"
       className={`${mode && "text-white"} flex relative ${
         phone === "phone" || phone === "tablet"
-          ? "flex-col-reverse px-5"
+          ? "flex-col px-5"
           : "items-center"
       } gap-32 py-10 justify-center ${transition}`}
     >
