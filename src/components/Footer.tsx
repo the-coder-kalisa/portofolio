@@ -67,7 +67,7 @@ const font = useRecoilValue(fonts);
             >
               <div
                 onClick={(): void => drop(index)}
-                className="font-bold cursor-pointer text-xl flex  w-full justify-between"
+                className="font-bold cursor-pointer overflow-hidden text-xl flex  w-full justify-between"
               >
                 <h1>{title}</h1>
                 <ChevronRight
