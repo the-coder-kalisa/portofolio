@@ -19,7 +19,7 @@ const Home: FC = () => {
       id="home"
       className={` ${
         phone === "tablet" || phone === "phone"
-          ? "flex-col pt-[10rem] px-5"
+          ? "flex-col-reverse pt-[10rem] px-5"
           : "pt-[5rem] pr-[15rem] pl-[5rem]"
       } justify-between items-center flex gap-3`}
     >
