@@ -35,8 +35,8 @@ function App() {
       } ${transition} ${font ? "text-lg" : "text-sm"}`}
     >
       {/* <Navigation /> */}
-      {/* <Home />
-      <Services /> */}
+      {/* <Home /> */ }
+      <Services /> 
     <Solution /> 
       <Career /> 
       <Footer /> 
