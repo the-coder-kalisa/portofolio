@@ -11,7 +11,7 @@ const phone = useRecoilValue(phones);
 const font = useRecoilValue(fonts);
   return (
     <div
-      className={`flex justify-between items-center px-20 py-10 gap-4 ${
+      className={`flex justify-between items-center px-32 py-10 gap-4 ${
         (phone === "phone" || phone === "tablet") &&
         "flex-col-reverse justify-start"
       }`}
