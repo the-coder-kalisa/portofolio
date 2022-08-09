@@ -67,7 +67,7 @@ const font = useRecoilValue(fonts);
             >
               <div
                 onClick={(): void => drop(index)}
-                className="font-bold cursor-pointer overflow-hidden text-xl flex  w-full justify-between"
+                className="font-bold cursor-pointer text-xl flex  w-full justify-between"
               >
                 <h1>{title}</h1>
                 <ChevronRight
@@ -89,7 +89,7 @@ const font = useRecoilValue(fonts);
                   }
                 />
               </div>
-              <div className="flex flex-col overflow-hidden pt-3 gap-2">
+              <div className="flex flex-col overflow-hidden gap-2">
                 {links.map(({ type, link, name }, index) =>
                   type ? (
                     <Link key={index} to={`#${name.toLowerCase()}`}>
