@@ -36,8 +36,8 @@ function App() {
     >
       {/* <Navigation /> */}
       {/* <Home />
-      <Services />
-    <Solution /> */ }
+      <Services /> */}
+    <Solution /> 
       <Career /> 
       <Footer /> 
     </div>
