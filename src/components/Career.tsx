@@ -11,13 +11,13 @@ const phone = useRecoilValue(phones);
 const font = useRecoilValue(fonts);
   return (
     <div
-      className={`flex justify-between items-center px-32 py-10 gap-4 ${
+      className={`flex justify-between items-center  py-10 gap-4 ${
         (phone === "phone" || phone === "tablet") &&
         "flex-col justify-start"
       }`}
     >
       <img src={Code} className="min-w-[40rem]" />
-      <div className="max-w-[50rem] flex flex-col gap-10">
+      <div className=" flex flex-col gap-10">
         <div
           className={`${
             font ? "text-6xl" : "text-4xl"
