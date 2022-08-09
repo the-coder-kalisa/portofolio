@@ -1,6 +1,7 @@
 import React, {  useState } from "react";
 import { Link } from "react-router-dom";
 import { Button, IconButton } from "@mui/material";
+import MenuIcon from '@mui/icons-material/Menu';
 import { BsList } from "react-icons/bs";
 import { transition } from "../data";
 import { DarkMode, LightMode } from "@mui/icons-material";
@@ -32,6 +33,7 @@ const Navigation: React.FC = () => {
           {/* <BsList
             style={{ height: "1.5em", width: "1.5em", cursor: "pointer" }}
           /> */}
+          <MenuIcon style={{height: 20, width: 20, cursor: "pointer", color: mode ? "white" : "black"}} />
           {droped && (
             <div className="absolute bg-white gap-3 ml-2 flex flex-col">
               {buttons.map((button, index) => {
