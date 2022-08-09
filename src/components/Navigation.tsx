@@ -24,7 +24,7 @@ const Navigation: React.FC = () => {
       } py-5 ${phone !== "phone" ? "pl-20 pr-10" : "px-3"} justify-between`}
     >
       {phone === "phone" && (
-        <div onMouseEnter={() => setDroped(true)} onMouseLeave={() => setDroped(false)} className="relative">
+        <div className="relative">
           <BsList style={{height: 20, width: 20, cursor: "pointer"}}/>
           {droped && (
             <div className="absolute">hello</div>
