@@ -1,15 +1,15 @@
 import { ChevronRight, Email, Send } from "@mui/icons-material";
 import { Button } from "@mui/material";
-import {  useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
-import {  useRecoilValue } from "recoil";
+import { useRecoilValue } from "recoil";
 import { fonts, modes, phones } from "../atom";
 import { FooterData } from "../data";
-import {  transition } from "../data";
+import { transition } from "../data";
 function Footer() {
-const phone = useRecoilValue(phones);
-const mode = useRecoilValue(modes);
-const font = useRecoilValue(fonts);
+  const phone = useRecoilValue(phones);
+  const mode = useRecoilValue(modes);
+  const font = useRecoilValue(fonts);
   const [drops, setDrops] = useState<number[]>([]);
   const drop = (index: number) => {
     let dro = drops.filter((drop) => drop !== index);
@@ -18,9 +18,11 @@ const font = useRecoilValue(fonts);
   return (
     <div
       id="aboutus"
-      className={`text-white py-5 flex justify-between px-12 ${
-        mode ? "bg-transparent" : "bg-[#091b2c]"
-      } ${transition} ${!font ? "flex-col gap-5" : "gap-10"}`}
+      className={`text-white py-5 flex justify-between ${
+        phone !== "phone" && "px-12"
+      } ${mode ? "bg-transparent" : "bg-[#091b2c]"} ${transition} ${
+        !font ? "flex-col gap-5" : "gap-10"
+      }`}
     >
       <div className="flex flex-col gap-3">
         <Link
@@ -63,11 +65,11 @@ const font = useRecoilValue(fonts);
                   ? (links.length + 1) * 33
                   : "2rem",
               }}
-              className={` duration-500 flex flex-col gap-5 overflow-hidden min-w-full`}
+              className={` duration-500 flex flex-col gap-5 overflow-hidden w-full`}
             >
               <div
                 onClick={(): void => drop(index)}
-                className="font-bold cursor-pointer text-xl flex  w-full justify-between"
+                className="font-bold cursor-pointer bg-transparent text-xl flex  w-full justify-between"
               >
                 <h1>{title}</h1>
                 <ChevronRight
