@@ -24,23 +24,15 @@ const Navigation: React.FC = () => {
       } py-5 ${phone !== "phone" ? "pl-20 pr-10" : "px-3"} justify-between`}
     >
       {phone === "phone" && (
-        <div className="relative">
-          {/* <BsList style={{height: 20, width: 20, cursor: "pointer"}}/> */}
-          {droped && (
-            <div className="absolute">hello</div>
-          )}
-        </div>
-      )}
-       {/* {phone === "phone" && (
         <div
           className="relative"
           onMouseEnter={() => setDroped(true)}
           onMouseLeave={() => setDroped(false)}
-        > */}
+        >
           {/* <BsList
-            style={{ height: 20, width: 20, cursor: "pointer" }}
+            style={{ height: "1.5em", width: "1.5em", cursor: "pointer" }}
           /> */}
-          {/* {droped && (
+          {droped && (
             <div className="absolute bg-white gap-3 ml-2 flex flex-col">
               {buttons.map((button, index) => {
                 let link: string =
@@ -62,9 +54,9 @@ const Navigation: React.FC = () => {
                 );
               })}
             </div>
-          )} */}
-        {/* </div>
-      )} */}
+          )}
+        </div>
+      )}
       <Link
         to="/"
         className={`${mode && "text-white"} ${transition} ${
@@ -113,7 +105,7 @@ const Navigation: React.FC = () => {
             )}
           </IconButton>
         </div>
-      </div> 
+      </div>
     </div>
   );
 };
