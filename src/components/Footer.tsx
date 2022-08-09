@@ -1,14 +1,14 @@
 import { ChevronRight, Email, Send } from "@mui/icons-material";
 import { Button } from "@mui/material";
-import {  useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
-import {  useRecoilValue } from "recoil";
+import { useRecoilValue } from "recoil";
 import { fonts, modes } from "../atom";
 import { FooterData } from "../data";
-import {  transition } from "../data";
+import { transition } from "../data";
 function Footer() {
-const mode = useRecoilValue(modes);
-const font = useRecoilValue(fonts);
+  const mode = useRecoilValue(modes);
+  const font = useRecoilValue(fonts);
   const [drops, setDrops] = useState<number[]>([]);
   const drop = (index: number) => {
     let dro = drops.filter((drop) => drop !== index);
