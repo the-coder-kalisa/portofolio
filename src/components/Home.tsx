@@ -2,7 +2,7 @@ import { Button } from "@mui/material";
 import { FC, useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import Profile from "../images/me.png";
-import { State, transition } from "../store";
+import {  transition } from "../data";
 import Facebook from "./Facebook";
 import Google from "./Google";
 import Twitter from "./Twitter";

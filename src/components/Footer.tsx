@@ -1,12 +1,11 @@
 import { ChevronRight, Email, Send } from "@mui/icons-material";
 import { Button } from "@mui/material";
-import { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import {  useState } from "react";
 import { Link } from "react-router-dom";
-import { useRecoilState, useRecoilValue } from "recoil";
+import {  useRecoilValue } from "recoil";
 import { fonts, modes, phones } from "../atom";
 import { FooterData } from "../data";
-import { State, transition } from "../store";
+import {  transition } from "../data";
 function Footer() {
 const phone = useRecoilValue(phones);
 const mode = useRecoilValue(modes);

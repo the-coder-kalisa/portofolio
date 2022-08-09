@@ -205,3 +205,5 @@ export const career: Career[] = [
   { name: "Transparent" },
   { name: "Lamakuru" },
 ];
+
+export const transition = "transition-all duration-1000";

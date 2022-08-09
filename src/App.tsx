@@ -1,4 +1,4 @@
-import { transition } from "./store";
+import { transition } from "./data";
 import { Home, Navigation, Services, Solution, Footer, Career } from "./components";
 import { useEffect } from "react";
 import { useRecoilValue, useSetRecoilState } from "recoil";

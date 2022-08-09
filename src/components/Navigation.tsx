@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, {  useState } from "react";
 import { Link } from "react-router-dom";
 import { Button, IconButton } from "@mui/material";
 import { BsList } from "react-icons/bs";
-import { useDispatch, useSelector } from "react-redux";
-import { actions, State, transition } from "../store";
+import { transition } from "../data";
 import { DarkMode, LightMode } from "@mui/icons-material";
 import { useRecoilState, useRecoilValue } from "recoil";
 import { fonts, modes, phones } from "../atom";

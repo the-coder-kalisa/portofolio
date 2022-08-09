@@ -1,8 +1,7 @@
 import { Button } from "@mui/material";
 import React, { useState, useEffect } from "react";
-import { useSelector } from "react-redux";
 import { categorie, knowledge } from "../data";
-import { State, transition } from "../store";
+import {  transition } from "../data";
 import CV from "../images/desktop.png";
 import { Close } from "@mui/icons-material";
 import { useRecoilValue } from "recoil";

@@ -1,7 +1,6 @@
-import { FC, useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import { FC } from "react"
 import { career } from "../data";
-import { State, transition } from "../store";
+import {  transition } from "../data";
 import Code from "../images/Code.jpg";
 import { useRecoilValue } from "recoil";
 import { fonts, modes, phones } from "../atom";
