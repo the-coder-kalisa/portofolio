@@ -23,7 +23,7 @@ const Navigation: React.FC = () => {
         !mode ? "bg-white" : "bg-[#091b2c]"
       } py-5 ${phone !== "phone" ? "pl-20 pr-10" : "px-3"} justify-between`}
     >
-      {/* {phone === "phone" && (
+       {/* {phone === "phone" && (
         <div
           className="relative"
           onMouseEnter={() => setDroped(true)}
@@ -56,7 +56,7 @@ const Navigation: React.FC = () => {
             </div>
           )}
         </div>
-      )}
+      )} */}
       <Link
         to="/"
         className={`${mode && "text-white"} ${transition} ${
@@ -105,7 +105,7 @@ const Navigation: React.FC = () => {
             )}
           </IconButton>
         </div>
-      </div> */}
+      </div> 
     </div>
   );
 };
