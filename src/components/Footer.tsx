@@ -62,9 +62,9 @@ function Footer() {
               key={index}
               style={{
                 height: drops.includes(index)
-                  ? (links.length + 1) * 33
+                  ? (links.length + 1) * 35
                   : "2rem",
-              overflowY: "hidden"}}
+              overflow: "hidden"}}
               className={` duration-500 flex flex-col gap-5 w-full`}
             >
               <div
@@ -91,7 +91,7 @@ function Footer() {
                   }
                 />
               </div>
-              <div className="flex flex-col h-full gap-2">
+              <div className="flex flex-col h-full pt-5 gap-2">
                 {links.map(({ type, link, name }, index) =>
                   type ? (
                     <Link key={index} to={`#${name.toLowerCase()}`}>
