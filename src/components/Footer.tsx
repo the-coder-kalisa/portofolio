@@ -3,11 +3,10 @@ import { Button } from "@mui/material";
 import {  useState } from "react";
 import { Link } from "react-router-dom";
 import {  useRecoilValue } from "recoil";
-import { fonts, modes, phones } from "../atom";
+import { fonts, modes } from "../atom";
 import { FooterData } from "../data";
 import {  transition } from "../data";
 function Footer() {
-const phone = useRecoilValue(phones);
 const mode = useRecoilValue(modes);
 const font = useRecoilValue(fonts);
   const [drops, setDrops] = useState<number[]>([]);
