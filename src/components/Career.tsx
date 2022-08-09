@@ -1,18 +1,17 @@
-import { FC } from "react"
+import { FC } from "react";
 import { career } from "../data";
-import {  transition } from "../data";
+import { transition } from "../data";
 import Code from "../images/Code.jpg";
 import { useRecoilValue } from "recoil";
 import { fonts, modes, phones } from "../atom";
 const Career: FC = () => {
-const mode = useRecoilValue(modes);
-const phone = useRecoilValue(phones);
-const font = useRecoilValue(fonts);
+  const mode = useRecoilValue(modes);
+  const phone = useRecoilValue(phones);
+  const font = useRecoilValue(fonts);
   return (
     <div
       className={`flex justify-between items-center  py-10 gap-4 ${
-        (phone === "phone" || phone === "tablet") &&
-        "flex-col justify-start"
+        (phone === "phone" || phone === "tablet") && "flex-col justify-start"
       }`}
     >
       <img src={Code} className="min-w-[40rem]" />

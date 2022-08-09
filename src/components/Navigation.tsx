@@ -1,8 +1,7 @@
-import React, {  useState } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button, IconButton } from "@mui/material";
-import MenuIcon from '@mui/icons-material/Menu';
-import { BsList } from "react-icons/bs";
+import MenuIcon from "@mui/icons-material/Menu";
 import { transition } from "../data";
 import { DarkMode, LightMode } from "@mui/icons-material";
 import { useRecoilState, useRecoilValue } from "recoil";
@@ -30,10 +29,14 @@ const Navigation: React.FC = () => {
           onMouseEnter={() => setDroped(true)}
           onMouseLeave={() => setDroped(false)}
         >
-          {/* <BsList
-            style={{ height: "1.5em", width: "1.5em", cursor: "pointer" }}
-          /> */}
-          <MenuIcon style={{height: 20, width: 20, cursor: "pointer", color: mode ? "white" : "black"}} />
+          <MenuIcon
+            style={{
+              height: 20,
+              width: 20,
+              cursor: "pointer",
+              color: mode ? "white" : "black",
+            }}
+          />
           {droped && (
             <div className="absolute bg-white gap-3 ml-2 flex flex-col">
               {buttons.map((button, index) => {

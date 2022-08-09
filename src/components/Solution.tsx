@@ -1,16 +1,16 @@
 import { useRecoilValue } from "recoil";
 import { fonts, modes, phones } from "../atom";
 import business from "../images/business.jpg";
-import {  transition } from "../data";
+import { transition } from "../data";
 function Solution() {
-const mode = useRecoilValue(modes);
-const phone = useRecoilValue(phones);
-const font = useRecoilValue(fonts);
+  const mode = useRecoilValue(modes);
+  const phone = useRecoilValue(phones);
+  const font = useRecoilValue(fonts);
   return (
     <div
       id="solution"
       className={`flex ${
-        (phone === "phone" || phone === "tablet") ? "flex-col px-5" : "px-32"
+        phone === "phone" || phone === "tablet" ? "flex-col px-5" : "px-32"
       } gap-20 items-center py-20 justify-center`}
     >
       <img
@@ -35,7 +35,6 @@ const font = useRecoilValue(fonts);
             solution to your good business. Many business that I've helped are
             still congulating me for my work. What are you waiting for?
           </div>
-          
         </div>
       </div>
     </div>

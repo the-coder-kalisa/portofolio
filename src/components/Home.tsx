@@ -1,7 +1,7 @@
 import { Button } from "@mui/material";
 import { FC } from "react";
 import Profile from "../images/me.png";
-import {  transition } from "../data";
+import { transition } from "../data";
 import Facebook from "./Facebook";
 import Google from "./Google";
 import Twitter from "./Twitter";

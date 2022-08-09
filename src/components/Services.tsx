@@ -1,14 +1,14 @@
 import { Button } from "@mui/material";
 import React, { useState, useEffect } from "react";
 import { categorie, knowledge } from "../data";
-import {  transition } from "../data";
+import { transition } from "../data";
 import CV from "../images/desktop.png";
 import { Close } from "@mui/icons-material";
 import { useRecoilValue } from "recoil";
 import { fonts, modes, phones } from "../atom";
 const Services: React.FC = () => {
-const mode = useRecoilValue(modes);
-const phone = useRecoilValue(phones)
+  const mode = useRecoilValue(modes);
+  const phone = useRecoilValue(phones);
   const [desc, setDesc] = useState<Array<categorie>>();
   const [popup, setPopup] = useState<boolean>(false);
   const [hoverd, setHoverd] = useState<number>();
@@ -86,7 +86,12 @@ const phone = useRecoilValue(phones)
                   >
                     {languages?.map(
                       ({ name, frameworksAndLibraries }, index) => (
-                        <div key={index} className={`flex ${phone === "phone" ? "flex-col gap-1" : "gap-2"}`}>
+                        <div
+                          key={index}
+                          className={`flex ${
+                            phone === "phone" ? "flex-col gap-1" : "gap-2"
+                          }`}
+                        >
                           <div
                             className={`max-w-[16rem] ${
                               frameworksAndLibraries
@@ -101,12 +106,20 @@ const phone = useRecoilValue(phones)
                             {name} {frameworksAndLibraries && ":"}
                           </div>
                           <div
-                          className={`flex ${phone === "phone" ? "flex-col pl-5" : "items-center"}`}
+                            className={`flex ${
+                              phone === "phone"
+                                ? "flex-col pl-5"
+                                : "items-center"
+                            }`}
                           >
                             {frameworksAndLibraries?.map(
                               (frameAndLibra, index) => (
                                 <div
-                                  className={`${(phone === "phone" || phone === "tablet") ? "text-sm font-normal" : "text-sm font-medium"} flex gap-[2px]`}
+                                  className={`${
+                                    phone === "phone" || phone === "tablet"
+                                      ? "text-sm font-normal"
+                                      : "text-sm font-medium"
+                                  } flex gap-[2px]`}
                                   key={index}
                                 >
                                   <span>{frameAndLibra}</span>
@@ -161,8 +174,22 @@ const phone = useRecoilValue(phones)
                 className={`w-[10rem] h-[10rem] rounded-full`}
               />
               <div className="flex flex-col gap-1">
-                <h1 className={!(phone === "phone" || phone === "tablet") ? `text-xl font-bold` : "text-lg font-semibold"}>{type}</h1>
-                <div className={`${!(phone === "phone" || phone === "tablet") ? "text-sm" : "text-xs"} max-w-[40rem] overflow-hidden overflow-ellipsis`}>
+                <h1
+                  className={
+                    !(phone === "phone" || phone === "tablet")
+                      ? `text-xl font-bold`
+                      : "text-lg font-semibold"
+                  }
+                >
+                  {type}
+                </h1>
+                <div
+                  className={`${
+                    !(phone === "phone" || phone === "tablet")
+                      ? "text-sm"
+                      : "text-xs"
+                  } max-w-[40rem] overflow-hidden overflow-ellipsis`}
+                >
                   {desc}
                 </div>
               </div>
