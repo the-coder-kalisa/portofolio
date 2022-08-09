@@ -89,7 +89,7 @@ const font = useRecoilValue(fonts);
                   }
                 />
               </div>
-              <div className="flex flex-col gap-2">
+              <div className="flex flex-col overflow-hidden pt-3 gap-2">
                 {links.map(({ type, link, name }, index) =>
                   type ? (
                     <Link key={index} to={`#${name.toLowerCase()}`}>
