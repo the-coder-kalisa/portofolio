@@ -1,6 +1,3 @@
-import { Button } from "@mui/material";
-import { useState, useEffect } from "react";
-import { useSelector } from "react-redux";
 import { useRecoilValue } from "recoil";
 import { fonts, modes, phones } from "../atom";
 import business from "../images/business.jpg";

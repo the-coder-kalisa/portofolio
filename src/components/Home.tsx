@@ -1,6 +1,5 @@
 import { Button } from "@mui/material";
-import { FC, useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import { FC } from "react";
 import Profile from "../images/me.png";
 import {  transition } from "../data";
 import Facebook from "./Facebook";
