@@ -64,8 +64,8 @@ function Footer() {
                 height: drops.includes(index)
                   ? (links.length + 1) * 33
                   : "2rem",
-              }}
-              className={` duration-500 flex flex-col gap-5 overflow-hidden w-full`}
+              overflowY: "hidden"}}
+              className={` duration-500 flex flex-col gap-5 w-full`}
             >
               <div
                 onClick={(): void => drop(index)}
