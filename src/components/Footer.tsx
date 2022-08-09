@@ -91,7 +91,7 @@ function Footer() {
                   }
                 />
               </div>
-              <div className="flex flex-col h-full text-base pt-3 gap-2">
+              <div className="flex flex-col h-full text-base pt-[0.80rem] gap-2">
                 {links.map(({ type, link, name }, index) =>
                   type ? (
                     <Link key={index} to={`#${name.toLowerCase()}`}>
