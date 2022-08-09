@@ -23,7 +23,7 @@ const Navigation: React.FC = () => {
         !mode ? "bg-white" : "bg-[#091b2c]"
       } py-5 ${phone !== "phone" ? "pl-20 pr-10" : "px-3"} justify-between`}
     >
-       {/* {phone === "phone" && (
+       {phone === "phone" && (
         <div
           className="relative"
           onMouseEnter={() => setDroped(true)}
@@ -32,7 +32,7 @@ const Navigation: React.FC = () => {
           <BsList
             style={{ height: "1.5em", width: "1.5em", cursor: "pointer" }}
           />
-          {droped && (
+          {/* {droped && (
             <div className="absolute bg-white gap-3 ml-2 flex flex-col">
               {buttons.map((button, index) => {
                 let link: string =
@@ -52,11 +52,11 @@ const Navigation: React.FC = () => {
                     {button}
                   </a>
                 );
-              })}
+              })} */}
             </div>
           )}
         </div>
-      )} */}
+      )}
       <Link
         to="/"
         className={`${mode && "text-white"} ${transition} ${
