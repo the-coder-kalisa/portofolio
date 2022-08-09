@@ -25,7 +25,7 @@ const Navigation: React.FC = () => {
     >
       {phone === "phone" && (
         <div className="relative">
-          <BsList style={{height: 20, width: 20, cursor: "pointer"}}/>
+          {/* <BsList style={{height: 20, width: 20, cursor: "pointer"}}/> */}
           {droped && (
             <div className="absolute">hello</div>
           )}
