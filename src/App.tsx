@@ -3,7 +3,8 @@ import Home from "./components/Home";
 import Navigation from "./components/Navigation";
 import Services from "./components/Services";
 import Solution from "./components/Solution";
-
+import Footer from "./components/Footer";
+import Career from "./components/Career";
 import { useEffect } from "react";
 import { useRecoilValue, useSetRecoilState } from "recoil";
 import { fonts, modes, phones } from "./atom";
@@ -33,13 +34,12 @@ function App() {
         mode ? "bg-[#091b2c] text-white" : "bg-[white] text-black"
       } ${transition} ${font ? "text-lg" : "text-sm"}`}
     >
-      hgello
       {/* <Navigation /> */}
       {/* <Home />
       <Services />
       <Solution />
-      <Career />
-      <Footer /> */}
+      <Career /> */ }
+      <Footer /> 
     </div>
   );
 }

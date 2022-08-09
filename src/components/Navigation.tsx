@@ -26,8 +26,8 @@ const Navigation: React.FC = () => {
       {phone === "phone" && (
         <div
           className="relative"
-          onMouseEnter={(): void => setDroped(true)}
-          onMouseLeave={(): void => setDroped(false)}
+          onMouseEnter={() => setDroped(true)}
+          onMouseLeave={() => setDroped(false)}
         >
           <BsList
             style={{ height: "1.5em", width: "1.5em", cursor: "pointer" }}
