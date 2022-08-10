@@ -24,7 +24,6 @@ const Home: FC = () => {
           : "pt-[5rem] pr-[15rem] pl-[5rem]"
       } justify-between items-center flex gap-3`}
     >
-      <Fade left>
         <div className={`flex flex-col max-w-[40rem]  gap-5`}>
           <div className={`flex flex-col ${!font ? "gap-3" : "gap-10"}`}>
             <div
@@ -58,8 +57,6 @@ const Home: FC = () => {
             Hire Me
           </Button>
         </div>
-      </Fade>
-      <Fade top>
         <div className="relative">
           <img src={gif} alt="gif" className="absolute top-0 -left-[12rem]" />
 
@@ -86,7 +83,6 @@ const Home: FC = () => {
             alt="me"
           />
         </div>
-      </Fade>
     </div>
   );
 };

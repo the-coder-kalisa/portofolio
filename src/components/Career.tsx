@@ -15,10 +15,8 @@ const Career: FC = () => {
         (phone === "phone" || phone === "tablet") && "flex-col justify-start"
       }`}
     >
-      <Fade left>
         <img src={Code} className="min-w-[40rem]" />
-      </Fade>
-      <Fade right>
+
         <div className=" flex flex-col gap-10">
           <div
             className={`${
@@ -56,7 +54,7 @@ const Career: FC = () => {
             </div>
           </div>
         </div>
-      </Fade>
+
     </div>
   );
 };

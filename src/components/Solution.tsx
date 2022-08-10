@@ -14,14 +14,11 @@ function Solution() {
         phone === "phone" || phone === "tablet" ? "flex-col px-5" : "px-32"
       } gap-20 items-center py-20 justify-center`}
     >
-      <Fade left>
         <img
           src={business}
           alt="business"
           className={`${phone === "phone" && "w-full"} max-w-[45rem]`}
         />
-      </Fade>
-      <Fade right>
         <div className="max-w-[50rem] flex flex-col gap-10">
           <div
             className={`${
@@ -41,7 +38,6 @@ function Solution() {
             </div>
           </div>
         </div>
-      </Fade>
     </div>
   );
 }

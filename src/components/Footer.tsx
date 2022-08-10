@@ -17,7 +17,6 @@ function Footer() {
     drops.includes(index) ? setDrops(dro) : setDrops([...drops, index]);
   };
   return (
-    <Fade bottom>
       <div
         id="aboutus"
         className={`text-white py-5 flex justify-between ${
@@ -155,7 +154,6 @@ function Footer() {
           </div>
         </div>
       </div>
-    </Fade>
   );
 }
 

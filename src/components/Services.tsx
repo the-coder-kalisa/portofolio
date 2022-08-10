@@ -34,7 +34,6 @@ const Services: React.FC = () => {
           : "items-center"
       } gap-32 py-10 justify-center ${transition}`}
     >
-     <Fade left>
      <div
         className={` ${
           font && "max-w-[40rem]"
@@ -199,9 +198,6 @@ const Services: React.FC = () => {
           </div>
         ))}
       </div>
-
-     </Fade>
-      <Fade right>
         <div className="max-w-[40rem] flex flex-col gap-3">
           <div className={`${!font ? "text-4xl" : "text-7xl"} font-bold`}>
             <div
@@ -231,7 +227,6 @@ const Services: React.FC = () => {
             </Button>
           </div>
         </div>
-      </Fade>
     </div>
   );
 };
