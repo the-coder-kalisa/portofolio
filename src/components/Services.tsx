@@ -34,7 +34,7 @@ const Services: React.FC = () => {
           : "items-center"
       } gap-32 py-10 justify-center ${transition}`}
     >
-     <div
+      <div
         className={` ${
           font && "max-w-[40rem]"
         } max-h-[40rem] overflow-y-scroll rounded-xl ${
@@ -198,35 +198,34 @@ const Services: React.FC = () => {
           </div>
         ))}
       </div>
-        <div className="max-w-[40rem] flex flex-col gap-3">
-          <div className={`${!font ? "text-4xl" : "text-7xl"} font-bold`}>
-            <div
-              className={`${
-                mode ? "text-[white]" : "text-[#19305c]"
-              } ${transition}`}
-            >
-              My awesome
-            </div>
-            <div className="text-[#e9843f]">services</div>
+      <div className="max-w-[40rem] flex flex-col gap-3">
+        <div className={`${!font ? "text-4xl" : "text-7xl"} font-bold`}>
+          <div
+            className={`${
+              mode ? "text-[white]" : "text-[#19305c]"
+            } ${transition}`}
+          >
+            My awesome
           </div>
-          <div className="flex flex-col gap-3">
-            <div>
-              These skills are really mine don't hesitate to invite me on your
-              project, sothat we can put skills together to build a better
-              world!
-            </div>
-
-            <Button
-              variant="contained"
-              style={{ background: "#e9843f", maxWidth: 150 }}
-              href={CV}
-              target="_blank"
-              download
-            >
-              Download CV
-            </Button>
-          </div>
+          <div className="text-[#e9843f]">services</div>
         </div>
+        <div className="flex flex-col gap-3">
+          <div>
+            These skills are really mine don't hesitate to invite me on your
+            project, sothat we can put skills together to build a better world!
+          </div>
+
+          <Button
+            variant="contained"
+            style={{ background: "#e9843f", maxWidth: 150 }}
+            href={CV}
+            target="_blank"
+            download
+          >
+            Download CV
+          </Button>
+        </div>
+      </div>
     </div>
   );
 };
