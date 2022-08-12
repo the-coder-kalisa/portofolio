@@ -17,7 +17,7 @@ function Footer() {
   };
   const [messages, setMessages] = useState<Message>({ email: "", message: "" });
   const changeMessage = ({ email, message }: Message): void => {
-    setMessages({ ...messages, email , message  });
+    setMessages({ ...messages, ["email"] : email , ["message"] : message  });
   };
   const sendMessage = async() => {
     console.log(messages)
