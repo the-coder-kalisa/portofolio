@@ -6,6 +6,7 @@ import { useRecoilValue } from "recoil";
 import { fonts, modes, phones } from "../atom";
 import { FooterData } from "../data";
 import { transition } from "../data";
+import axios from "../axios"
 function Footer() {
   const phone = useRecoilValue(phones);
   const mode = useRecoilValue(modes);
@@ -15,6 +16,10 @@ function Footer() {
     let dro = drops.filter((drop) => drop !== index);
     drops.includes(index) ? setDrops(dro) : setDrops([...drops, index]);
   };
+  const sendMessage = (message: string, email: string) => {
+    let response = axios.post("/", {message, email});
+    console.log(response);
+  }
   return (
     <div
       id="aboutus"
