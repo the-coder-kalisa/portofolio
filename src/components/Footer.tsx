@@ -17,7 +17,9 @@ function Footer() {
   };
   const [messages, setMessages] = useState<Message>({ email: "", message: "" });
   const sendMessage = async () => {
-    console.log(messages);
+    const response = await axios.post("/", messages);
+    console.log(response.data);
+
   };
   return (
     <div
