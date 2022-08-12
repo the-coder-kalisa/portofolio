@@ -6,7 +6,6 @@ import CV from "../images/KALISA INEZA Giovanni CV.png";
 import { Close } from "@mui/icons-material";
 import { useRecoilValue } from "recoil";
 import { fonts, modes, phones } from "../atom";
-import { Fade } from "react-reveal";
 const Services: React.FC = () => {
   const mode = useRecoilValue(modes);
   const phone = useRecoilValue(phones);

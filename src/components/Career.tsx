@@ -4,7 +4,6 @@ import { transition } from "../data";
 import Code from "../images/Code.jpg";
 import { useRecoilValue } from "recoil";
 import { fonts, modes, phones } from "../atom";
-import { Fade } from "react-reveal";
 const Career: FC = () => {
   const mode = useRecoilValue(modes);
   const phone = useRecoilValue(phones);

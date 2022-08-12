@@ -2,7 +2,6 @@ import { useRecoilValue } from "recoil";
 import { fonts, modes, phones } from "../atom";
 import business from "../images/business.jpg";
 import { transition } from "../data";
-import { Fade } from "react-reveal";
 function Solution() {
   const mode = useRecoilValue(modes);
   const phone = useRecoilValue(phones);

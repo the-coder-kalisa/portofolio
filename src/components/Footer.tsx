@@ -6,7 +6,6 @@ import { useRecoilValue } from "recoil";
 import { fonts, modes, phones } from "../atom";
 import { FooterData } from "../data";
 import { transition } from "../data";
-import { Fade } from "react-reveal";
 function Footer() {
   const phone = useRecoilValue(phones);
   const mode = useRecoilValue(modes);
@@ -135,9 +134,7 @@ function Footer() {
           </div>
           <textarea
             placeholder="Enter your information"
-            className={`resize-none w-full min-h-[53px] ${
-              mode ? "text-black" : "text-white"
-            }`}
+            className="resize-none text-black w-full min-h-[53px]"
           ></textarea>
           <Button
             sx={{ width: 100 }}

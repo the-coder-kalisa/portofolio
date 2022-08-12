@@ -8,7 +8,6 @@ import Twitter from "./Twitter";
 import gif from "../images/gif.png";
 import { useRecoilValue } from "recoil";
 import { fonts, modes, phones } from "../atom";
-import { Fade, Flip, Roll } from "react-reveal";
 
 const Home: FC = () => {
   const mode = useRecoilValue(modes);
