@@ -4,9 +4,8 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useRecoilValue } from "recoil";
 import { fonts, modes, phones } from "../atom";
-import { FooterData } from "../data";
-import { transition } from "../data";
-import axios from "../axios"
+import axios from "../axios";
+import { FooterData, transition, Message } from "../data";
 function Footer() {
   const phone = useRecoilValue(phones);
   const mode = useRecoilValue(modes);
@@ -16,10 +15,14 @@ function Footer() {
     let dro = drops.filter((drop) => drop !== index);
     drops.includes(index) ? setDrops(dro) : setDrops([...drops, index]);
   };
-  const sendMessage = (message: string, email: string) => {
-    let response = axios.post("/", {message, email});
+  const [messages, setMessages] = useState<Message>({ email: "", message: "" });
+  const changeMessage = ({ email, message }: Message): void => {
+    setMessages({ ...messages, email, message });
+  };
+  const sendMessage = () => {
+    let response = axios.post("/", messages);
     console.log(response);
-  }
+  };
   return (
     <div
       id="aboutus"
@@ -131,6 +134,7 @@ function Footer() {
             />
             <input
               type="text"
+              onChange={(e): void => changeMessage({ email: e.target.value })}
               placeholder="Enter your Email"
               className={`bg-[transparent] w-full border-none outline-none ${
                 mode ? "text-black" : "text-white"
@@ -138,10 +142,12 @@ function Footer() {
             />
           </div>
           <textarea
+            onChange={(e): void => changeMessage({ message: e.target.value })}
             placeholder="Enter your information"
             className="resize-none text-black w-full min-h-[53px]"
           ></textarea>
           <Button
+          onClick={() :void => sendMessage()}
             sx={{ width: 100 }}
             style={{
               background: "#e9843f",

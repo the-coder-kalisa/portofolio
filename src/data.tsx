@@ -207,3 +207,7 @@ export const career: Career[] = [
 ];
 
 export const transition = "transition-all duration-1000";
+export interface Message {
+  email?: string;
+  message?: string;
+}
