@@ -16,11 +16,8 @@ function Footer() {
     drops.includes(index) ? setDrops(dro) : setDrops([...drops, index]);
   };
   const [messages, setMessages] = useState<Message>({ email: "", message: "" });
-  const changeMessage = ({ email, message }: Message): void => {
-    setMessages({ ...messages, ["email"] : email , ["message"] : message  });
-  };
-  const sendMessage = async() => {
-    console.log(messages)
+  const sendMessage = async () => {
+    console.log(messages);
   };
   return (
     <div
@@ -134,7 +131,7 @@ function Footer() {
             <input
               type="text"
               onChange={(e): void => {
-                changeMessage({ email: e.target.value })
+                setMessages({ ...messages, email: e.target.value });
               }}
               placeholder="Enter your Email"
               className={`bg-[transparent] w-full border-none outline-none ${
@@ -143,12 +140,14 @@ function Footer() {
             />
           </div>
           <textarea
-            onChange={(e): void => changeMessage({ message: e.target.value })}
+            onChange={(e): void => {
+              setMessages({ ...messages, message: e.target.value });
+            }}
             placeholder="Enter your information"
             className="resize-none text-black w-full min-h-[53px]"
           ></textarea>
           <Button
-          onClick={() => sendMessage()}
+            onClick={() => sendMessage()}
             sx={{ width: 100 }}
             style={{
               background: "#e9843f",
