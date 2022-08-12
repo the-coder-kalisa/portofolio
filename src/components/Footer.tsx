@@ -17,11 +17,11 @@ function Footer() {
   };
   const [messages, setMessages] = useState<Message>({ email: "", message: "" });
   const changeMessage = ({ email, message }: Message): void => {
-    setMessages({ ...messages, email, message });
+    setMessages({ ...messages, email , message  });
   };
-  const sendMessage = () => {
-    let response = axios.post("/", messages);
-    console.log(response);
+  const sendMessage = async() => {
+    let response = await axios.post("/", messages);
+    console.log(response.data);
   };
   return (
     <div
@@ -134,7 +134,9 @@ function Footer() {
             />
             <input
               type="text"
-              onChange={(e): void => changeMessage({ email: e.target.value })}
+              onChange={(e): void => {
+                changeMessage({ email: e.target.value })
+              }}
               placeholder="Enter your Email"
               className={`bg-[transparent] w-full border-none outline-none ${
                 mode ? "text-black" : "text-white"
@@ -147,7 +149,7 @@ function Footer() {
             className="resize-none text-black w-full min-h-[53px]"
           ></textarea>
           <Button
-          onClick={() :void => sendMessage()}
+          onClick={() => sendMessage()}
             sx={{ width: 100 }}
             style={{
               background: "#e9843f",

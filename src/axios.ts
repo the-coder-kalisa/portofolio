@@ -1,5 +1,5 @@
 import axios from "axios";
-const url = "https://kalisainezagiovanni.herokuapp.com";
+const url = "http://localhost:5000";
 const instance = axios.create({
     baseURL: url,
 })
