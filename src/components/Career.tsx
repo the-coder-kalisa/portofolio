@@ -29,7 +29,7 @@ const Career: FC = () => {
         </div>
         <div className={``}>
           <div
-            className={`flex flex-col p-2 gap-2 ${
+            className={`flex flex-col p-2 max-w-[20rem] gap-2 ${
               mode ? "bg-white text-black" : "bg-[#000000bd] text-white"
             }`}
           >
