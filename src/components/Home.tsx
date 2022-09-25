@@ -69,12 +69,15 @@ const Home: FC = () => {
             className={`${allcircle} bg-[#fae1b1] relative right-24 top-[12rem]`}
           >
             <div className="absolute cursor-pointer bg-white rounded-full p-3 drop-shadow-xl right-5 top-5">
-              <Twitter />
+              <a title="@KalisaIneza" href="https://twitter.com/KalisaIneza" target="_blank">
+                <Twitter />
+              </a>
             </div>
           </div>
-          <div className="absolute right-[17rem] top-14">
+          <a title="NI Kalisa" className="absolute z-0 right-[17rem] top-14">
+            
             <Facebook />
-          </div>
+          </a>
         </div>
         <img
           src={Profile}

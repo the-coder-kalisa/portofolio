@@ -202,12 +202,14 @@ interface Career {
 }
 export const career: Career[] = [
   { name: "Levitra", link: "https://levitra.vercel.app" },
+  { name: "Ganira250", link: "https://www.ganira250.com" },
   { name: "Transparent" },
-  { name: "Lamakuru" },
+  { name: "Kaukka" },
 ];
 
 export const transition = "transition-all duration-1000";
 export interface Message {
-  email?: string;
-  message?: string;
+  email: string;
+  name: string;
+  message: string;
 }

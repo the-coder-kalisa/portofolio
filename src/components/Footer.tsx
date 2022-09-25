@@ -15,11 +15,44 @@ function Footer() {
     let dro = drops.filter((drop) => drop !== index);
     drops.includes(index) ? setDrops(dro) : setDrops([...drops, index]);
   };
-  const [messages, setMessages] = useState<Message>({ email: "", message: "" });
+  const [messages, setMessages] = useState<Message>({
+    email: "",
+    message: "",
+    name: "",
+  });
+  const validation = async () => {
+    if (
+      messages.email === "" ||
+      messages.message === "" ||
+      messages.name === ""
+    ) {
+      return true;
+    } else if (
+      !/[A-Z0-9._%+-]+@[A-Z0-9-]+.+.[A-Z]{2,4}/gim.test(messages.email)
+    ) {
+      return true;
+    } else {
+      return false;
+    }
+  };
   const sendMessage = async () => {
-    const response = await axios.post("/", messages);
-    console.log(response.data);
+    if (await validation()) {
+      alert("Please fill all the fields as it must be");
+    } else {
+      try{
 
+        const response = await axios.post("/", messages);
+        console.log(response.data);
+        alert("Message sent successfully");
+        setMessages({
+          email: "",
+          message: "",
+          name: "",
+        });
+      }catch(error : any){
+        alert(error.response.data)
+      }
+    }
   };
   return (
     <div
@@ -116,6 +149,15 @@ function Footer() {
       <div className="flex flex-col gap-2">
         <h3 className="font-bold text-xl">Text me on email</h3>
         <div className="flex flex-col items-end gap-4">
+          <input
+            type="text"
+            placeholder="Enter your name..."
+            value={messages.name}
+            className="w-full h-10 px-2 text-black bg-white border-none outline-none"
+            onChange={(e): void => {
+              setMessages({ ...messages, name: e.target.value });
+            }}
+          />
           <div
             className={`${
               !mode ? "bg-[#091b2c]" : "bg-white"
@@ -132,21 +174,21 @@ function Footer() {
             />
             <input
               type="text"
+              value={messages.email}
               onChange={(e): void => {
                 setMessages({ ...messages, email: e.target.value });
               }}
               placeholder="Enter your Email"
-              className={`bg-[transparent] w-full border-none outline-none ${
-                mode ? "text-black" : "text-white"
-              }`}
+              className={`w-full border-none outline-none bg-white text-black`}
             />
           </div>
           <textarea
             onChange={(e): void => {
               setMessages({ ...messages, message: e.target.value });
             }}
+            value={messages.message}
             placeholder="Enter your information"
-            className="resize-none text-black w-full min-h-[53px]"
+            className={`resize-none w-full min-h-[53px] border-none outline-none bg-white text-black`}
           ></textarea>
           <Button
             onClick={() => sendMessage()}
