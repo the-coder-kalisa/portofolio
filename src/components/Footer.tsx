@@ -67,6 +67,16 @@ function Footer() {
         !font ? "flex-col gap-5" : "gap-10"
       }`}
     >
+      {!loading && (
+        <div className="fixed top-0 right-0 w-full h-screen left-0 bg-[#00000093] text-white flex items-center justify-center z-50">
+          <div className="flex flex-col-reverse gap-5 items-center">
+            <div className="font-bold w-[18rem] text-center text-xl">
+              Sending your message to the best developer
+            </div>
+            <CircularProgress />
+          </div>
+        </div>
+      )}
       <div className="flex flex-col  gap-3">
         <Link
           to="/"
@@ -195,7 +205,7 @@ function Footer() {
             className={`resize-none w-full min-h-[53px] border-none outline-none bg-white text-black`}
           ></textarea>
           <Button
-          disabled={loading}
+            disabled={loading}
             onClick={() => sendMessage()}
             sx={{ width: 100 }}
             style={{
