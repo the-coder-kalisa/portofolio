@@ -61,17 +61,12 @@ function Footer() {
   return (
     <div
       id="aboutus"
-      className={`text-white py-5 flex justify-between ${
+      className={`text-white py-5 relative flex justify-between ${
         phone !== "phone" ? "px-12" : "px-1"
       } ${mode ? "bg-transparent" : "bg-[#091b2c]"} ${transition} ${
         !font ? "flex-col gap-5" : "gap-10"
       }`}
     >
-      {loading && (
-        <div className="top-0 left-0 right-0 h-screen w-full flex items-center justify-center bg-[#00000077]">
-          <CircularProgress />
-        </div>
-      )}
       <div className="flex flex-col  gap-3">
         <Link
           to="/"
@@ -200,6 +195,7 @@ function Footer() {
             className={`resize-none w-full min-h-[53px] border-none outline-none bg-white text-black`}
           ></textarea>
           <Button
+          disabled={loading}
             onClick={() => sendMessage()}
             sx={{ width: 100 }}
             style={{
