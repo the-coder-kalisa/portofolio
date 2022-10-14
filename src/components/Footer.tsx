@@ -1,5 +1,5 @@
 import { ChevronRight, Email, Send } from "@mui/icons-material";
-import { Button } from "@mui/material";
+import { Button, CircularProgress } from "@mui/material";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useRecoilValue } from "recoil";
@@ -35,12 +35,13 @@ function Footer() {
       return false;
     }
   };
+  const [loading, setLoading] = useState<boolean>(false);
   const sendMessage = async () => {
     if (await validation()) {
       alert("Please fill all the fields as it must be");
     } else {
-      try{
-
+      try {
+        setLoading(true);
         const response = await axios.post("/", messages);
         console.log(response.data);
         alert("Message sent successfully");
@@ -49,8 +50,11 @@ function Footer() {
           message: "",
           name: "",
         });
-      }catch(error : any){
-        alert(error.response.data)
+        setLoading(false);
+      } catch (error: any) {
+        setLoading(true);
+
+        alert(error.response.data);
       }
     }
   };
@@ -63,6 +67,11 @@ function Footer() {
         !font ? "flex-col gap-5" : "gap-10"
       }`}
     >
+      {loading && (
+        <div className="top-0 left-0 right-0 h-screen w-full flex items-center justify-center bg-[#00000077]">
+          <CircularProgress />
+        </div>
+      )}
       <div className="flex flex-col  gap-3">
         <Link
           to="/"
