@@ -37,7 +37,6 @@ export const knowledge: Array<knowledge> = [
               "AngularJs",
               "VueJs",
               "NextJs",
-              "NestJs",
               "Material UI",
             ],
           },
@@ -62,7 +61,10 @@ export const knowledge: Array<knowledge> = [
       {
         type: "Backend",
         languages: [
-          { name: "Javascript", frameworksAndLibraries: ["NodeJs"] },
+          {
+            name: "Javascript and Typescript",
+            frameworksAndLibraries: ["NodeJs", "NestJs"],
+          },
           { name: "Java", frameworksAndLibraries: ["Spring Boot"] },
           { name: "Go lang", frameworksAndLibraries: ["Gin"] },
           { name: "Php" },
@@ -75,7 +77,15 @@ export const knowledge: Array<knowledge> = [
     image: Data,
     desc: "Database management refers to the actions a business takes to manipulate and control data to meet necessary conditions throughout the entire data lifecycle.",
     categorie: [
-      { type: "Relational", languages: [{ name: "Mysql" }] },
+      {
+        type: "Relational",
+        languages: [
+          { name: "Mysql" },
+          { name: "Sql" },
+          { name: "MariaDb" },
+          { name: "Graphic Sql" },
+        ],
+      },
       { type: "Non-relational", languages: [{ name: "Mongodb" }] },
     ],
   },
@@ -137,7 +147,6 @@ export const knowledge: Array<knowledge> = [
         languages: [
           { name: "C" },
           { name: "C++" },
-          { name: "Matlab" },
           { name: "C#" },
           { name: "R" },
           { name: "Python" },
