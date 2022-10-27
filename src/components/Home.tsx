@@ -1,6 +1,6 @@
 import { Button } from "@mui/material";
 import { FC } from "react";
-import Profile from "../images/me.png";
+import Profile from "../images/kf.png";
 import { transition } from "../data";
 import Facebook from "./Facebook";
 import Google from "./Google";
@@ -84,7 +84,7 @@ const Home: FC = () => {
         </div>
         <img
           src={Profile}
-          className="min-h-[30rem] min-w-[30rem] z-10 relative"
+          className="min-h-[35rem] object-cover min-w-[35rem] z-10 relative"
           alt="me"
         />
       </div>
