@@ -2,7 +2,7 @@ import { Button } from "@mui/material";
 import React, { useState, useEffect } from "react";
 import { categorie, knowledge } from "../data";
 import { transition } from "../data";
-import CV from "../images/KALISA INEZA Giovanni CV.png";
+import CV from "../images/kalisa.pdf";
 import { Close } from "@mui/icons-material";
 import { useRecoilValue } from "recoil";
 import { fonts, modes, phones } from "../atom";
