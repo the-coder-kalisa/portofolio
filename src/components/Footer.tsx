@@ -52,9 +52,8 @@ function Footer() {
         });
         setLoading(false);
       } catch (error: any) {
-        setLoading(true);
-
-        alert(error.response.data);
+        alert(error.response.data || error.message);
+        setLoading(false)
       }
     }
   };
@@ -102,7 +101,7 @@ function Footer() {
                       {name}
                     </Link>
                   ) : (
-                    <a key={index} href={link}>
+                    <a key={index} target="_blank" href={link}>
                       {name}
                     </a>
                   )
@@ -152,7 +151,7 @@ function Footer() {
                       {name}
                     </Link>
                   ) : (
-                    <a key={index} href={link}>
+                    <a key={index} target="_blank" href={link}>
                       {name}
                     </a>
                   )
