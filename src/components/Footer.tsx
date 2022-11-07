@@ -60,9 +60,7 @@ function Footer() {
   return (
     <div
       id="aboutus"
-      className={`text-white py-5 relative flex justify-between ${
-        phone !== "phone" ? "px-12" : "px-1"
-      } ${mode ? "bg-transparent" : "bg-[#091b2c]"} ${transition} ${
+      className={`text-white py-5 relative max-w-[100rem] mx-auto flex justify-between px-2 ${mode ? "bg-transparent" : "bg-[#091b2c]"} ${transition} ${
         !font ? "flex-col gap-5" : "gap-10"
       }`}
     >
@@ -97,9 +95,9 @@ function Footer() {
               <div className="flex flex-col gap-2">
                 {links.map(({ type, name, link }, index) =>
                   type ? (
-                    <Link key={index} to={`#${name.toLowerCase()}`}>
+                    <a key={index} href={`#${name.toLowerCase()}`}>
                       {name}
-                    </Link>
+                    </a>
                   ) : (
                     <a key={index} target="_blank" href={link}>
                       {name}
