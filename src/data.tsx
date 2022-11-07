@@ -159,7 +159,7 @@ export const knowledge: Array<knowledge> = [
 ];
 type Link = { name: string; link?: string; type: boolean };
 interface Footer {
-  title: string;
+  title: string;  
   links: Link[];
 }
 export const FooterData: Footer[] = [
@@ -200,8 +200,8 @@ export const FooterData: Footer[] = [
   {
     title: "New Business",
     links: [
-      { name: "gthecoderkalisaineza@gmail.com", type: false },
-      { name: "+250785964206", type: false },
+      { name: "gthecoderkalisaineza@gmail.com", type: false, link: "mailto:gthecoderkalisaineza@gmail.com" },
+      { name: "+250785964206", type: false, link: "tel:+250785964206" },
     ],
   },
 ];
