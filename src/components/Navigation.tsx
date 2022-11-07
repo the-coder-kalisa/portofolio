@@ -9,7 +9,7 @@ import { fonts, modes, phones } from "../atom";
 
 const Navigation: React.FC = () => {
   const [mode, setMode] = useRecoilState(modes);
-  const buttons: string[] = ["Home", "Services", "solution", "About Us"];
+  const buttons: string[] = ["Home", "Services", "solution", "About Me"];
   const changeMode = () => {
     setMode(!mode);
   };

@@ -169,7 +169,7 @@ export const FooterData: Footer[] = [
       { name: "Home", type: true },
       { name: "Services", type: true },
       { name: "Solution", type: true },
-      { name: "Aboutus", type: true },
+      { name: "About Me", type: true },
     ],
   },
   {
