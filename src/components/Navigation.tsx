@@ -68,7 +68,7 @@ const Navigation: React.FC = () => {
           font ? "text-xl " : "text-[1rem]"
         } font-bold`}
       >
-        Personal
+       The Coder
       </Link>
       <div className="flex items-center gap-20">
         {phone !== "phone" && (
