@@ -210,7 +210,7 @@ interface Career {
   link?: string;
 }
 export const career: Career[] = [
-  { name: "Levitra", link: "https://levitra.vercel.app" },
+  { name: "Levitra", link: "https://levitra.vercel.app/landing/primarycare" },
   { name: "Ganira250", link: "https://www.ganira250.com" },
   { name: "Transparent" },
   { name: "Kaukka" },

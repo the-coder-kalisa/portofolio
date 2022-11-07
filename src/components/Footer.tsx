@@ -212,7 +212,7 @@ function Footer() {
               background: "#e9843f",
               display: "flex",
               gap: 5,
-              color: "#0e11bb",
+              color: "white",
             }}
           >
             <span>send</span>
