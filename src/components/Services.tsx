@@ -5,7 +5,9 @@ import { transition } from "../data";
 import CV from "../images/kalisa.pdf";
 import { Close } from "@mui/icons-material";
 import { useRecoilValue } from "recoil";
+import Fade from "react-reveal/Fade"
 import { fonts, modes, phones } from "../atom";
+
 const Services: React.FC = () => {
   const mode = useRecoilValue(modes);
   const phone = useRecoilValue(phones);
@@ -197,13 +199,15 @@ const Services: React.FC = () => {
           </div>
         ))}
       </div>
+      <Fade right>
+
       <div className="max-w-[40rem] flex flex-col gap-3">
         <div className={`${!font ? "text-4xl" : "text-7xl"} font-bold`}>
           <div
             className={`${
               mode ? "text-[white]" : "text-[#19305c]"
             } ${transition}`}
-          >
+            >
             My awesome
           </div>
           <div className="text-[#e9843f]">services</div>
@@ -220,11 +224,12 @@ const Services: React.FC = () => {
             href={CV}
             target="_blank"
             download
-          >
+            >
             Download CV
           </Button>
         </div>
       </div>
+            </Fade>
     </div>
   );
 };

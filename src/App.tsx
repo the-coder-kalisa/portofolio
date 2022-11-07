@@ -4,7 +4,7 @@ import Navigation from "./components/Navigation";
 import Services from "./components/Services";
 import Solution from "./components/Solution";
 import Footer from "./components/Footer";
-import Career from "./components/Career";
+import Career from "./components/Projects";
 import { useEffect } from "react";
 import { useRecoilValue, useSetRecoilState } from "recoil";
 import { fonts, modes, phones } from "./atom";

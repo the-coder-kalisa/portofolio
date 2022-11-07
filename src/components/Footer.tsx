@@ -5,7 +5,9 @@ import { Link } from "react-router-dom";
 import { useRecoilValue } from "recoil";
 import { fonts, modes, phones } from "../atom";
 import axios from "../axios";
+import Fade from "react-reveal/Fade"
 import { FooterData, transition, Message } from "../data";
+
 function Footer() {
   const phone = useRecoilValue(phones);
   const mode = useRecoilValue(modes);
@@ -58,38 +60,38 @@ function Footer() {
     }
   };
   return (
-    <div
-      id="aboutus"
-      className={`text-white py-5 relative max-w-[100rem] mx-auto flex justify-between px-2 ${mode ? "bg-transparent" : "bg-[#091b2c]"} ${transition} ${
-        !font ? "flex-col gap-5" : "gap-10"
-      }`}
-    >
-      {loading && (
-        <div className="fixed top-0 right-0 w-full h-screen left-0 bg-[#000000d0] text-white flex items-center justify-center z-50">
-          <div className="flex flex-col-reverse gap-5 items-center">
-            <div className="font-bold w-[18rem] text-center text-xl">
-              Sending your message to the best developer
+    <Fade bottom>
+
+      <div
+        id="aboutus"
+        className={`text-white py-5 relative max-w-[100rem] mx-auto flex justify-between px-2 ${mode ? "bg-transparent" : "bg-[#091b2c]"} ${transition} ${!font ? "flex-col gap-5" : "gap-10"
+          }`}
+      >
+        {loading && (
+          <div className="fixed top-0 right-0 w-full h-screen left-0 bg-[#000000d0] text-white flex items-center justify-center z-50">
+            <div className="flex flex-col-reverse gap-5 items-center">
+              <div className="font-bold w-[18rem] text-center text-xl">
+                Sending your message to the best developer
+              </div>
+              <CircularProgress />
             </div>
-            <CircularProgress />
+          </div>
+        )}
+        <div className="flex flex-col  gap-3">
+          <Link
+            to="/"
+            className={`${mode && "text-white"} ${transition} ${!font ? "text-xl " : "text-[1.3rem]"
+              } font-bold`}
+          >
+            Personal
+          </Link>
+          <div className="max-w-[21rem]">
+            Professional Web, desktop and mobile developer. We help in each of the
+            above services.
           </div>
         </div>
-      )}
-      <div className="flex flex-col  gap-3">
-        <Link
-          to="/"
-          className={`${mode && "text-white"} ${transition} ${
-            !font ? "text-xl " : "text-[1.3rem]"
-          } font-bold`}
-        >
-          Personal
-        </Link>
-        <div className="max-w-[21rem]">
-          Professional Web, desktop and mobile developer. We help in each of the
-          above services.
-        </div>
-      </div>
-      {font
-        ? FooterData.map(({ title, links }, index) => (
+        {font
+          ? FooterData.map(({ title, links }, index) => (
             <div key={index} className="flex flex-col gap-3">
               <h3 className="font-bold text-xl">{title}</h3>
               <div className="flex flex-col gap-2">
@@ -107,7 +109,7 @@ function Footer() {
               </div>
             </div>
           ))
-        : FooterData.map(({ title, links }, index) => (
+          : FooterData.map(({ title, links }, index) => (
             <div
               key={index}
               style={{
@@ -127,18 +129,18 @@ function Footer() {
                   style={
                     !drops.includes(index)
                       ? {
-                          transitionProperty: "all",
-                          transitionTimingFunction:
-                            "cubic-bezier(0.4, 0, 0.2, 1)",
-                          transitionDuration: "100ms",
-                        }
+                        transitionProperty: "all",
+                        transitionTimingFunction:
+                          "cubic-bezier(0.4, 0, 0.2, 1)",
+                        transitionDuration: "100ms",
+                      }
                       : {
-                          transform: "rotate(90deg)",
-                          transitionProperty: "all",
-                          transitionTimingFunction:
-                            "cubic-bezier(0.4, 0, 0.2, 1)",
-                          transitionDuration: "100ms",
-                        }
+                        transform: "rotate(90deg)",
+                        transitionProperty: "all",
+                        transitionTimingFunction:
+                          "cubic-bezier(0.4, 0, 0.2, 1)",
+                        transitionDuration: "100ms",
+                      }
                   }
                 />
               </div>
@@ -157,67 +159,67 @@ function Footer() {
               </div>
             </div>
           ))}
-      <div className="flex flex-col gap-2">
-        <h3 className="font-bold text-xl">Text me on email</h3>
-        <div className="flex flex-col items-end gap-4">
-          <input
-            type="text"
-            placeholder="Enter your name..."
-            value={messages.name}
-            className="w-full h-10 px-2 text-black bg-white border-none outline-none"
-            onChange={(e): void => {
-              setMessages({ ...messages, name: e.target.value });
-            }}
-          />
-          <div
-            className={`${
-              !mode ? "bg-[#091b2c]" : "bg-white"
-            } ${transition} flex justify-end w-full gap-5 p-2`}
-          >
-            <Email
-              sx={{ height: 25, width: 25 }}
-              style={{
-                color: mode ? "black" : "white",
-                transitionProperty: "all",
-                transitionTimingFunction: "cubic-bezier(0.4, 0, 0.2, 1)",
-                transitionDuration: "100ms",
-              }}
-            />
+        <div className="flex flex-col gap-2">
+          <h3 className="font-bold text-xl">Text me on email</h3>
+          <div className="flex flex-col items-end gap-4">
             <input
               type="text"
-              value={messages.email}
+              placeholder="Enter your name..."
+              value={messages.name}
+              className="w-full h-10 px-2 text-black bg-white border-none outline-none"
               onChange={(e): void => {
-                setMessages({ ...messages, email: e.target.value });
+                setMessages({ ...messages, name: e.target.value });
               }}
-              placeholder="Enter your Email"
-              className={`w-full border-none outline-none bg-white text-black`}
             />
+            <div
+              className={`${!mode ? "bg-[#091b2c]" : "bg-white"
+                } ${transition} flex justify-end w-full gap-5 p-2`}
+            >
+              <Email
+                sx={{ height: 25, width: 25 }}
+                style={{
+                  color: mode ? "black" : "white",
+                  transitionProperty: "all",
+                  transitionTimingFunction: "cubic-bezier(0.4, 0, 0.2, 1)",
+                  transitionDuration: "100ms",
+                }}
+              />
+              <input
+                type="text"
+                value={messages.email}
+                onChange={(e): void => {
+                  setMessages({ ...messages, email: e.target.value });
+                }}
+                placeholder="Enter your Email"
+                className={`w-full border-none outline-none bg-white text-black`}
+              />
+            </div>
+            <textarea
+              onChange={(e): void => {
+                setMessages({ ...messages, message: e.target.value });
+              }}
+              value={messages.message}
+              placeholder="Enter your information"
+              className={`resize-none w-full min-h-[53px] border-none outline-none bg-white text-black`}
+            ></textarea>
+            <Button
+              disabled={loading}
+              onClick={() => sendMessage()}
+              sx={{ width: 100 }}
+              style={{
+                background: "#e9843f",
+                display: "flex",
+                gap: 5,
+                color: "white",
+              }}
+            >
+              <span>send</span>
+              <Send />
+            </Button>
           </div>
-          <textarea
-            onChange={(e): void => {
-              setMessages({ ...messages, message: e.target.value });
-            }}
-            value={messages.message}
-            placeholder="Enter your information"
-            className={`resize-none w-full min-h-[53px] border-none outline-none bg-white text-black`}
-          ></textarea>
-          <Button
-            disabled={loading}
-            onClick={() => sendMessage()}
-            sx={{ width: 100 }}
-            style={{
-              background: "#e9843f",
-              display: "flex",
-              gap: 5,
-              color: "white",
-            }}
-          >
-            <span>send</span>
-            <Send />
-          </Button>
         </div>
       </div>
-    </div>
+    </Fade>
   );
 }
 
