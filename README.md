@@ -1,2 +1,5 @@
-this is my portofolio
-i would like to tell all of you that i am back
+### protofolio for KALISA INEZA Giovanni
+
+you can visit my protofolio on [protofolio link](https://www.kalisainezagiovanni.me)
+
+you can find my skills there
