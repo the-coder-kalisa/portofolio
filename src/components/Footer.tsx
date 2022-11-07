@@ -68,7 +68,7 @@ function Footer() {
       }`}
     >
       {loading && (
-        <div className="fixed top-0 right-0 w-full h-screen left-0 bg-[#00000093] text-white flex items-center justify-center z-50">
+        <div className="fixed top-0 right-0 w-full h-screen left-0 bg-[#000000d0] text-white flex items-center justify-center z-50">
           <div className="flex flex-col-reverse gap-5 items-center">
             <div className="font-bold w-[18rem] text-center text-xl">
               Sending your message to the best developer

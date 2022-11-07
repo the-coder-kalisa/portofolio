@@ -10,7 +10,7 @@ const Career: FC = () => {
   const font = useRecoilValue(fonts);
   return (
     <div
-      className={`flex justify-between items-center  py-10 gap-4 ${
+      className={`flex justify-between items-center mx-auto max-w-[100rem] py-10 gap-20 ${
         (phone === "phone" || phone === "tablet") && "flex-col justify-start"
       }`}
     >

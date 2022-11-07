@@ -1,6 +1,6 @@
 import { Button } from "@mui/material";
 import { FC } from "react";
-import Profile from "../images/kf.png";
+import Profile from "../images/another.png";
 import { transition } from "../data";
 import Facebook from "./Facebook";
 import Google from "./Google";
@@ -43,6 +43,7 @@ const Home: FC = () => {
             transduite and involved in projects like aquarens and others.
           </div>
         </div>
+        <a href="#aboutus">
         <Button
           variant="contained"
           style={{
@@ -52,9 +53,10 @@ const Home: FC = () => {
             padding: "0 10px",
             textTransform: "capitalize",
           }}
-        >
+          >
           Hire Me
         </Button>
+          </a>
       </div>
       <div className="relative">
         <img src={gif} alt="gif" className="absolute top-0 -left-[12rem]" />
@@ -84,7 +86,7 @@ const Home: FC = () => {
         </div>
         <img
           src={Profile}
-          className="min-h-[35rem] object-cover min-w-[35rem] z-10 relative"
+          className="min-h-[40rem] object-cover min-w-[40rem] z-10 relative"
           alt="me"
         />
       </div>
