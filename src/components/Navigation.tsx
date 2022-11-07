@@ -98,7 +98,7 @@ const Navigation: React.FC = () => {
             })}
           </div>
         )}
-        <div className="flex items-center gap-5 h-3">
+        {/* <div className="flex items-center gap-5 h-3">
           <IconButton onClick={changeMode}>
             {mode ? (
               <LightMode
@@ -109,7 +109,7 @@ const Navigation: React.FC = () => {
               <DarkMode sx={{ height: 15, width: 15 }} />
             )}
           </IconButton>
-        </div>
+        </div> */}
       </div>
     </div>
   );
