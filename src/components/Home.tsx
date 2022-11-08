@@ -63,7 +63,7 @@ const Home: FC = () => {
 
         <div className="relative">
 
-          <img src={gif} alt="gif" className="absolute top-0 -left-[12rem]" />
+          <img src={gif} alt="gif" className="absolute top-0 hidden xl:block -left-[12rem]" />
 
           <div className="absolute items-end top-8 flex z-0">
             <div className={`${allcircle} bg-[#d2f7ff]`}>
