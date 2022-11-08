@@ -20,7 +20,7 @@ const Home: FC = () => {
     <div
       id="home"
       className={` ${phone === "tablet" || phone === "phone"
-        ? "flex-col-reverse pt-[10rem] px-5"
+        ? "flex-col-reverse pt-[3rem] px-5"
         : "pt-[5rem] pr-[15rem] pl-[5rem]"
         } justify-between items-center flex gap-3`}
     >
@@ -90,7 +90,7 @@ const Home: FC = () => {
           </div>
           <img
             src={Profile}
-            className="min-h-[40rem] object-cover min-w-[40rem] z-10 relative"
+            className={`object-cover z-10 relative sm:min-w-[40rem] h-[30rem] w-[30rem] sm:min-h-[40rem]`}
             alt="me"
           />
         </div>
