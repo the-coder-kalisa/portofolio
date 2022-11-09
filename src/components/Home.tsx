@@ -8,8 +8,8 @@ import Twitter from "./Twitter";
 import gif from "../images/gif.png";
 import { useRecoilValue } from "recoil";
 import { fonts, modes, phones } from "../atom";
-import Fade from "react-reveal/Fade"
-import Roll from "react-reveal/Roll"
+import Fade from "react-reveal/Fade";
+import Roll from "react-reveal/Roll";
 
 const Home: FC = () => {
   const mode = useRecoilValue(modes);
@@ -19,24 +19,27 @@ const Home: FC = () => {
   return (
     <div
       id="home"
-      className={` ${phone === "tablet" || phone === "phone"
-        ? "flex-col-reverse pt-[3rem] px-5"
-        : "pt-[5rem] pr-[15rem] pl-[5rem]"
-        } justify-between items-center flex gap-3`}
+      className={` ${
+        phone === "tablet" || phone === "phone"
+          ? "flex-col-reverse pt-[3rem] px-5"
+          : "pt-[5rem] pr-[15rem] pl-[5rem]"
+      } justify-between items-center flex gap-3`}
     >
       <Fade left>
         <div className={`flex flex-col max-w-[40rem]  gap-5`}>
           <div className={`flex flex-col ${!font ? "gap-3" : "gap-10"}`}>
             <div
-              className={`font-bold flex flex-col ${font ? "text-6xl gap-10" : "text-4xl gap-2"
-                }`}
+              className={`font-bold flex flex-col ${
+                font ? "text-6xl gap-10" : "text-4xl gap-2"
+              }`}
             >
               <div className={`${transition}`}>Hy! I am</div>
               <div className="text-[#e9843f]">KALISA INEZA Giovanni</div>
             </div>
             <div
-              className={`font-[500] ${!mode ? "text-[#000000b6]" : "text-white"
-                } ${transition} `}
+              className={`font-[500] ${
+                !mode ? "text-[#000000b6]" : "text-white"
+              } ${transition} `}
             >
               Professional Web, desktop and mobile developer with more than 3
               years of experience. I am the owner of projects like levitra,
@@ -60,10 +63,12 @@ const Home: FC = () => {
         </div>
       </Fade>
       <Fade right>
-
         <div className="relative">
-
-          <img src={gif} alt="gif" className="absolute top-0 hidden xl:block -left-[12rem]" />
+          <img
+            src={gif}
+            alt="gif"
+            className="absolute top-0 hidden xl:block -left-[12rem]"
+          />
 
           <div className="absolute items-end top-8 flex z-0">
             <div className={`${allcircle} bg-[#d2f7ff]`}>

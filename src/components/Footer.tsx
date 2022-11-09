@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { useRecoilValue } from "recoil";
 import { fonts, modes, phones } from "../atom";
 import axios from "../axios";
-import Fade from "react-reveal/Fade"
+import Fade from "react-reveal/Fade";
 import { FooterData, transition, Message } from "../data";
 
 function Footer() {
@@ -55,16 +55,16 @@ function Footer() {
         setLoading(false);
       } catch (error: any) {
         alert(error.response.data || error.message);
-        setLoading(false)
+        setLoading(false);
       }
     }
   };
   return (
-
     <div
       id="aboutus"
-      className={`text-white py-5 relative max-w-[100rem] mx-auto flex justify-between px-2 ${mode ? "bg-transparent" : "bg-[#091b2c]"} ${transition} ${!font ? "flex-col gap-5" : "gap-10"
-        }`}
+      className={`text-white py-5 relative max-w-[100rem] mx-auto flex justify-between px-2 ${
+        mode ? "bg-transparent" : "bg-[#091b2c]"
+      } ${transition} ${!font ? "flex-col gap-5" : "gap-10"}`}
     >
       {loading && (
         <div className="fixed top-0 right-0 w-full h-screen left-0 bg-[#000000d0] text-white flex items-center justify-center z-50">
@@ -79,8 +79,9 @@ function Footer() {
       <div className="flex flex-col  gap-3">
         <Link
           to="/"
-          className={`${mode && "text-white"} ${transition} ${!font ? "text-xl " : "text-[1.3rem]"
-            } font-bold`}
+          className={`${mode && "text-white"} ${transition} ${
+            !font ? "text-xl " : "text-[1.3rem]"
+          } font-bold`}
         >
           Personal
         </Link>
@@ -91,73 +92,73 @@ function Footer() {
       </div>
       {font
         ? FooterData.map(({ title, links }, index) => (
-          <div key={index} className="flex flex-col gap-3">
-            <h3 className="font-bold text-xl">{title}</h3>
-            <div className="flex flex-col gap-2">
-              {links.map(({ type, name, link }, index) =>
-                type ? (
-                  <a key={index} href={`#${name.toLowerCase()}`}>
-                    {name}
-                  </a>
-                ) : (
-                  <a key={index} target="_blank" href={link}>
-                    {name}
-                  </a>
-                )
-              )}
+            <div key={index} className="flex flex-col gap-3">
+              <h3 className="font-bold text-xl">{title}</h3>
+              <div className="flex flex-col gap-2">
+                {links.map(({ type, name, link }, index) =>
+                  type ? (
+                    <a key={index} href={`#${name.toLowerCase()}`}>
+                      {name}
+                    </a>
+                  ) : (
+                    <a key={index} target="_blank" href={link}>
+                      {name}
+                    </a>
+                  )
+                )}
+              </div>
             </div>
-          </div>
-        ))
+          ))
         : FooterData.map(({ title, links }, index) => (
-          <div
-            key={index}
-            style={{
-              height: drops.includes(index)
-                ? (links.length + 1) * 31.5
-                : "2rem",
-              overflow: "hidden",
-            }}
-            className={` duration-500 flex flex-col w-full`}
-          >
             <div
-              onClick={(): void => drop(index)}
-              className="font-bold cursor-pointer bg-transparent text-xl flex  w-full justify-between"
+              key={index}
+              style={{
+                height: drops.includes(index)
+                  ? (links.length + 1) * 31.5
+                  : "2rem",
+                overflow: "hidden",
+              }}
+              className={` duration-500 flex flex-col w-full`}
             >
-              <h1>{title}</h1>
-              <ChevronRight
-                style={
-                  !drops.includes(index)
-                    ? {
-                      transitionProperty: "all",
-                      transitionTimingFunction:
-                        "cubic-bezier(0.4, 0, 0.2, 1)",
-                      transitionDuration: "100ms",
-                    }
-                    : {
-                      transform: "rotate(90deg)",
-                      transitionProperty: "all",
-                      transitionTimingFunction:
-                        "cubic-bezier(0.4, 0, 0.2, 1)",
-                      transitionDuration: "100ms",
-                    }
-                }
-              />
+              <div
+                onClick={(): void => drop(index)}
+                className="font-bold cursor-pointer bg-transparent text-xl flex  w-full justify-between"
+              >
+                <h1>{title}</h1>
+                <ChevronRight
+                  style={
+                    !drops.includes(index)
+                      ? {
+                          transitionProperty: "all",
+                          transitionTimingFunction:
+                            "cubic-bezier(0.4, 0, 0.2, 1)",
+                          transitionDuration: "100ms",
+                        }
+                      : {
+                          transform: "rotate(90deg)",
+                          transitionProperty: "all",
+                          transitionTimingFunction:
+                            "cubic-bezier(0.4, 0, 0.2, 1)",
+                          transitionDuration: "100ms",
+                        }
+                  }
+                />
+              </div>
+              <div className="flex flex-col h-full text-base pt-[2rem] gap-2">
+                {links.map(({ type, link, name }, index) =>
+                  type ? (
+                    <Link key={index} to={`#${name.toLowerCase()}`}>
+                      {name}
+                    </Link>
+                  ) : (
+                    <a key={index} target="_blank" href={link}>
+                      {name}
+                    </a>
+                  )
+                )}
+              </div>
             </div>
-            <div className="flex flex-col h-full text-base pt-[2rem] gap-2">
-              {links.map(({ type, link, name }, index) =>
-                type ? (
-                  <Link key={index} to={`#${name.toLowerCase()}`}>
-                    {name}
-                  </Link>
-                ) : (
-                  <a key={index} target="_blank" href={link}>
-                    {name}
-                  </a>
-                )
-              )}
-            </div>
-          </div>
-        ))}
+          ))}
       <div className="flex flex-col gap-2">
         <h3 className="font-bold text-xl">Text me on email</h3>
         <div className="flex flex-col items-end gap-4">
@@ -171,8 +172,9 @@ function Footer() {
             }}
           />
           <div
-            className={`${!mode ? "bg-[#091b2c]" : "bg-white"
-              } ${transition} flex justify-end w-full gap-5 p-2`}
+            className={`${
+              !mode ? "bg-[#091b2c]" : "bg-white"
+            } ${transition} flex justify-end w-full gap-5 p-2`}
           >
             <Email
               sx={{ height: 25, width: 25 }}

@@ -5,7 +5,7 @@ import { transition } from "../data";
 import CV from "../images/kalisa.pdf";
 import { Close } from "@mui/icons-material";
 import { useRecoilValue } from "recoil";
-import Fade from "react-reveal/Fade"
+import Fade from "react-reveal/Fade";
 import { fonts, modes, phones } from "../atom";
 
 const Services: React.FC = () => {
@@ -200,36 +200,36 @@ const Services: React.FC = () => {
         ))}
       </div>
       <Fade right>
-
-      <div className="max-w-[40rem] flex flex-col gap-3">
-        <div className={`${!font ? "text-4xl" : "text-7xl"} font-bold`}>
-          <div
-            className={`${
-              mode ? "text-[white]" : "text-[#19305c]"
-            } ${transition}`}
+        <div className="max-w-[40rem] flex flex-col gap-3">
+          <div className={`${!font ? "text-4xl" : "text-7xl"} font-bold`}>
+            <div
+              className={`${
+                mode ? "text-[white]" : "text-[#19305c]"
+              } ${transition}`}
             >
-            My awesome
+              My awesome
+            </div>
+            <div className="text-[#e9843f]">services</div>
           </div>
-          <div className="text-[#e9843f]">services</div>
-        </div>
-        <div className="flex flex-col gap-3">
-          <div>
-            These skills are really mine don't hesitate to invite me on your
-            project, sothat we can put skills together to build a better world!
-          </div>
+          <div className="flex flex-col gap-3">
+            <div>
+              These skills are really mine don't hesitate to invite me on your
+              project, sothat we can put skills together to build a better
+              world!
+            </div>
 
-          <Button
-            variant="contained"
-            style={{ background: "#e9843f", maxWidth: 150 }}
-            href={CV}
-            target="_blank"
-            download
+            <Button
+              variant="contained"
+              style={{ background: "#e9843f", maxWidth: 150 }}
+              href={CV}
+              target="_blank"
+              download
             >
-            Download CV
-          </Button>
+              Download CV
+            </Button>
+          </div>
         </div>
-      </div>
-            </Fade>
+      </Fade>
     </div>
   );
 };
