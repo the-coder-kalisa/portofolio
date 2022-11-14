@@ -159,7 +159,7 @@ export const knowledge: Array<knowledge> = [
 ];
 type Link = { name: string; link?: string; type: boolean };
 interface Footer {
-  title: string;  
+  title: string;
   links: Link[];
 }
 export const FooterData: Footer[] = [
@@ -200,7 +200,11 @@ export const FooterData: Footer[] = [
   {
     title: "New Business",
     links: [
-      { name: "gthecoderkalisaineza@gmail.com", type: false, link: "mailto:gthecoderkalisaineza@gmail.com" },
+      {
+        name: "gthecoderkalisaineza@gmail.com",
+        type: false,
+        link: "mailto:gthecoderkalisaineza@gmail.com",
+      },
       { name: "+250785964206", type: false, link: "tel:+250785964206" },
     ],
   },
@@ -212,6 +216,8 @@ interface Career {
 export const career: Career[] = [
   { name: "Levitra", link: "https://levitra.vercel.app/landing/primarycare" },
   { name: "Ganira250", link: "https://www.ganira250.com" },
+  { name: "Tweep", link: "https://mctweep.vercel.app" },
+  { name: "metaflix", link: "https://metaflix.vercel.app" },
   { name: "Transparent" },
   { name: "Kaukka" },
 ];
