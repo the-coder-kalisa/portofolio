@@ -37,6 +37,7 @@ export const knowledge: Array<knowledge> = [
               "AngularJs",
               "VueJs",
               "NextJs",
+              "Gatsby",
               "Material UI",
             ],
           },
